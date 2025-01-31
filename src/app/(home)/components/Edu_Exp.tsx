@@ -1,146 +1,170 @@
-"use client"
+"use client";
 
-import React, { useRef } from "react"
-import { motion, useScroll, useTransform } from "framer-motion"
+import type React from "react";
+import Title from "./Tittle";
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
+interface Experience {
+  company: string;
+  logo: string;
+  role: string;
+  startDate: string;
+  endDate: string;
+  description: string;
 }
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
+interface Education {
+  institution: string;
+  logo: string;
+  degree: string;
+  startDate: string;
+  endDate: string;
 }
 
-export default function Resume() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
+const experiences: Experience[] = [
+  {
+    company: "Faculty of Engineering, RUPP",
+    logo: "fe.png",
+    role: "Volunteer Bussiness Club",
+    startDate: "July 14, 2023",
+    endDate: "Mar , 23, 2024",
+    description:
+      "Worked Organization Events and marketing for Communication with teamwork .  ",
+  },
+  {
+    company: "Giantibis",
+    logo: "gain.jpeg",
+    role: "Frontend Developer / Freelance",
+    startDate: "Jan ,21 , 2025",
+    endDate: "present",
+    description:
+      "Build website using Next js and tailwind css .  A digital bus ticketing platform. ",
+  },
+  {
+    company: "RUPP",
+    logo: "logoevent.png",
+    role: "Project Assignment / Web Developer",
+    startDate: "Jan ,21, 2025",
+    endDate: "present",
+    description:
+      "I'm working with my team. and I am responsible for the design and development of the REST Full API of the website.",
+  },
+];
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [0.8, 1]);
+const education: Education[] = [
+  {
+    institution: "Royal University of Phnom Penh",
+    logo: "rupp.jpeg",
+    degree: "Bachelor of Information Technology Engineering",
+    startDate: "Mar 15, 2022",
+    endDate: "Present",
+  },
+  {
+    institution: "ANT Technology Training Center",
+    logo: "ant.png",
+    degree: "Fullstack Web Developer ",
+    startDate: "Jan 20, 2023",
+    endDate: "May 7, 2023",
+  },
+];
 
-  const educationData = [
-    {
-      period: "2016 - 2022",
-      degree: "Bunrany Hunsen Roleabier",
-      description: "Graduated from High School at Bunrany Hunsen Roleabier High School, Kampong chhngang",
-    },
-    {
-      period: "2023 - 2027",
-      degree: "Royal University of Phnom Penh",
-      institution: "Bachelor degree IT Engineering",
-      description: "Focus on Programming Fundamentals and Software Development",
-    },
-    {
-      period: "2023 (7months)",
-      degree: "Short Course at Etec-Center",
-      description: "Study C++ and Frontend Development(React JS) ",
-    },
-    {
-      period: "2024-present",
-      degree: "ANT Training",
-      description:
-        "I'm a student studying Scholarship Web Development at the ANT Training Center. The Ministry of Post and Telecommunication is the sponsor.",
-    },
-  ]
+const CardWrapper = ({ children }: { children: React.ReactNode }) => (
+  <div
+    className="group relative rounded-xl border border-gray-800 bg-gradient-to-br from-gray-900/90 to-gray-900/50 p-4 sm:p-6 backdrop-blur-sm
+               transition-all duration-300 hover:bg-gray-800/50 hover:shadow-[0_0_30px_2px_rgba(50,50,50,0.4)]
+               hover:border-gray-700 hover:-translate-y-1"
+  >
+    <div
+      className="absolute inset-0 rounded-xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 
+                    blur-xl transition-opacity duration-500 group-hover:opacity-100"
+    />
+    <div className="relative">{children}</div>
+  </div>
+);
 
-  const experienceData = [
-    {
-      period: "2023 (5-6months)",
-      role: "Volunteer Business Club students at RUPP",
-      description: "Organization Events and marketing",
-    },
-    {
-      period: "2023 (1month)",
-      role: "Internship at Spring Education center",
-    },
-    {
-      period: "2023",
-      role: "Volunteer e-days at FE-RUPP Generation 10",
-    },
-  ]
-
+export default function Portfolio() {
   return (
-    <motion.div 
-      ref={ref}
-      style={{ opacity, scale }}
-      className="min-h-screen md:p-12"
-    >
-      <div className="max-w-7xl mx-auto bg-slate-200 rounded-xl shadow-xl overflow-hidden">
-        <div className="grid lg:grid-cols-2 gap-2">
-          {/* Education Section */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={containerVariants}
-            className="p-8 bg-gray-900 text-white"
-          >
-            <h2 className="text-3xl font-bold mb-8 flex items-center">
-              <span className="bg-blue-500 w-2 h-8 mr-4 rounded-full"></span>
-              Education
-            </h2>
+    <div className="min-h-screen bg-black text-white p-4 sm:p-8 space-y-12 sm:space-y-16">
+      {/* Work Experience Section */}
+      <section>
+      <Title text="Experience" className="flex flex-col  items-center justify-center -rotate-6" />
+       
 
-            <div className="space-y-6">
-              {educationData.map((edu, index) => (
-                <motion.div
-                  key={index}
-                  className="border-l-2 border-blue-500 pl-4 hover:border-blue-400 transition-colors"
-                  variants={itemVariants}
-                >
-                  <div className="text-sm text-blue-400">{edu.period}</div>
-                  <h3 className="text-xl font-semibold mt-1">{edu.degree}</h3>
-                  <div className="text-gray-400">{edu.institution}</div>
-                  <p className="mt-2 text-gray-300">{edu.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Experience Section */}
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={containerVariants}
-            className="p-8"
-          >
-            <h2 className="text-3xl font-bold mb-8 text-gray-800 flex items-center">
-              <span className="bg-emerald-500 w-2 h-8 mr-4 rounded-full"></span>
-              Experience
-            </h2>
-
-            <div className="space-y-6">
-              {experienceData.map((exp, index) => (
-                <motion.div
-                  key={index}
-                  className="border-l-2 border-emerald-500 pl-4 hover:border-emerald-400 transition-colors"
-                  variants={itemVariants}
-                >
-                  <div className="text-sm text-emerald-600">{exp.period}</div>
-                  <h3 className="text-xl font-semibold mt-1 text-gray-800">{exp.role}</h3>
-                  <p className="mt-2 text-gray-600">{exp.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+        <div className="space-y-6 mt-10 sm:space-y-8">
+          {experiences.map((experience, index) => (
+            <CardWrapper key={`work-${index}`}>
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-0">
+                <div className="flex items-start gap-4">
+                  <div
+                    className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-gray-700 group-hover:ring-gray-500
+                             transition-all duration-300 hover:scale-110"
+                  >
+                    <img
+                      src={experience.logo || "/placeholder.svg"}
+                      alt={`${experience.company} logo`}
+                      width={48}
+                      height={48}
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h2 className="text-xl font-semibold group-hover:text-blue-400 transition-colors duration-300">
+                      {experience.company}
+                    </h2>
+                    <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                      {experience.role}
+                    </p>
+                  </div>
+                </div>
+                <p className="text-gray-400 group-hover:text-blue-300 transition-colors duration-300 text-sm sm:text-base">
+                  {experience.startDate} - {experience.endDate}
+                </p>
+              </div>
+              <p className="mt-4 text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300 text-sm sm:text-base">
+                {experience.description}
+              </p>
+            </CardWrapper>
+          ))}
         </div>
-      </div>
-    </motion.div>
-  )
+      </section>
+
+      {/* Education Section */}
+      <section>
+      <Title text="Education" className="flex flex-col  items-center justify-center -rotate-6" />
+       
+        <div className="space-y-6 mt-10 sm:space-y-8">
+          {education.map((edu, index) => (
+            <CardWrapper key={`edu-${index}`}>
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-0">
+                <div className="flex items-start gap-4">
+                  <div
+                    className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-gray-700 group-hover:ring-gray-500
+                             transition-all duration-300 hover:scale-110"
+                  >
+                    <img
+                      src={edu.logo || "/placeholder.svg"}
+                      alt={`${edu.institution} logo`}
+                      width={48}
+                      height={48}
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <h2 className="text-xl font-semibold group-hover:text-blue-400 transition-colors duration-300">
+                      {edu.institution}
+                    </h2>
+                    <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                      {edu.degree}
+                    </p>
+                  </div>
+                </div>
+                <p className="text-gray-400 group-hover:text-blue-300 transition-colors duration-300 text-sm sm:text-base">
+                  {edu.startDate} - {edu.endDate}
+                </p>
+              </div>
+            </CardWrapper>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
 }
