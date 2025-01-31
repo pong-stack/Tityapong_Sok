@@ -43,8 +43,8 @@ const experiences: Experience[] = [
     company: "RUPP",
     logo: "logoevent.png",
     role: "Project Assignment / Web Developer",
-    startDate: "Jan ,21, 2025",
-    endDate: "present",
+    startDate: "Dec ,02, 2024",
+    endDate: "Jan , 18 ,2025",
     description:
       "I'm working with my team. and I am responsible for the design and development of the REST Full API of the website.",
   },
@@ -62,8 +62,8 @@ const education: Education[] = [
     institution: "ANT Technology Training Center",
     logo: "ant.png",
     degree: "Fullstack Web Developer ",
-    startDate: "Jan 20, 2023",
-    endDate: "May 7, 2023",
+    startDate: "Jan 20, 2024",
+    endDate: "present",
   },
 ];
 
