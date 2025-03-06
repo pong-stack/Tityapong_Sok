@@ -95,7 +95,7 @@ export default function Hero() {
               borderRadius="0.5rem"
               className="p-3 font-semibold text-gray-700 dark:text-gray-300 dark:border-gray-500"
             >
-              <p>Available for Work 💼</p>
+              <p>open for work 💼</p>
             </MovingBorderBtn>
           </motion.div>
         </motion.div>

@@ -53,9 +53,9 @@ const experiences: Experience[] = [
 const education: Education[] = [
   {
     institution: "Royal University of Phnom Penh",
-    logo: "rupp.jpeg",
+    logo: "rupp.png",
     degree: "Bachelor of Information Technology Engineering",
-    startDate: "Mar 15, 2022",
+    startDate: "Mar 01, 2022",
     endDate: "Present",
   },
   {
