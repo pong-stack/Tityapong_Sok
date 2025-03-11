@@ -30,15 +30,15 @@ const experiences: Experience[] = [
     description:
       "Worked Organization Events and marketing for Communication with teamwork .  ",
   },
-  {
-    company: "Giantibis",
-    logo: "gain.jpeg",
-    role: "Frontend Developer / Freelance",
-    startDate: "Jan ,21 , 2025",
-    endDate: "present",
-    description:
-      "Build website using Next js and tailwind css .  A digital bus ticketing platform. ",
-  },
+  // {
+  //   company: "Giantibis",
+  //   logo: "gain.jpeg",
+  //   role: "Frontend Developer / Freelance",
+  //   startDate: "Jan ,21 , 2025",
+  //   endDate: "present",
+  //   description:
+  //     "Build website using Next js and tailwind css .  A digital bus ticketing platform. ",
+  // },
   {
     company: "RUPP",
     logo: "logoevent.png",
