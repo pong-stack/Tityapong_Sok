@@ -48,12 +48,7 @@ const DATA = {
         icon: Icons.telegram,
         navbar: true,
       },
-      Youtube: {
-        name: "Youtube",
-        url: "/",
-        icon: Icons.youtube,
-        navbar: true,
-      },
+    
       email: {
         name: "Send Email",
         url: "#",
