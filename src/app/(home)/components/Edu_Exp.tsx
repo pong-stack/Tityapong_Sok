@@ -63,7 +63,7 @@ const education: Education[] = [
     logo: "ant.png",
     degree: "Fullstack Web Developer ",
     startDate: "Jan 20, 2024",
-    endDate: "present",
+    endDate: "Mar 31 , 2025",
   },
 ];
 
