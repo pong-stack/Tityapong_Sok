@@ -213,11 +213,10 @@
 // }
 
 
-
 "use client"
 
 import React, { useEffect, useState } from "react"
-import Title from "./Tittle" // Note: Fixed spelling from "Tittle" to "Title"
+import Title from "./Tittle" // Fixed spelling from "Tittle" to "Title"
 import Link from "next/link"
 // import { useTheme } from "next-themes"
 
@@ -235,7 +234,7 @@ interface Education {
 const educationData: Education[] = [
   {
     institution: "Royal University of Phnom Penh",
-    logo: "rupp.png",
+    logo: "rupp.jpeg",
     degree: "Bachelor of Information Technology Engineering",
     startDate: "Mar 01, 2022",
     endDate: "Present",
@@ -327,19 +326,19 @@ export default function Portfolio() {
         <div className="space-y-6 mt-10 sm:space-y-8">
           {educationData.map((education, index) => (
             <CardWrapper key={`education-${index}`} url={education.url}>
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-0">
-                <div className="flex items-start gap-4">
-                  <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-gray-300 dark:ring-gray-700 
-                                  group-hover:ring-gray-400 dark:group-hover:ring-gray-500 transition-all duration-300 hover:scale-110">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+                <div className="flex items-center gap-4">
+                  <div className="flex-shrink-0 relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-gray-300 dark:ring-gray-700 
+                                  group-hover:ring-gray-400 dark:group-hover:ring-gray-500 transition-all duration-300">
                     <img
                       src={education.logo || "/placeholder.svg"}
                       alt={`${education.institution} logo`}
                       width={48}
                       height={48}
-                      className="object-cover"
+                      className="h-full w-full object-cover"
                     />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h2 className="text-xl font-semibold text-gray-800 dark:text-white group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors duration-300">
                       {education.institution}
                     </h2>
@@ -348,7 +347,7 @@ export default function Portfolio() {
                     </p>
                   </div>
                 </div>
-                <p className="text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors duration-300 text-sm sm:text-base">
+                <p className="text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors duration-300 text-sm sm:text-base sm:ml-auto">
                   {education.startDate} - {education.endDate}
                 </p>
               </div>
