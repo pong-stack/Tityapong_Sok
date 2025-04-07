@@ -18,7 +18,7 @@ const projects = [
     technologies: ["Node.js", "Express", "MySQL", "EJS"],
     links: [
       { label: "Website", icon: <Globe className="w-4 h-4" />, url: "https://www.wesoccer.publicvm.com/" },
-      { label: "Source", icon: <Github className="w-4 h-4" />, url: "https://github.com/LeangengSeak/we_soccer.git" },
+      { label: "Source", icon: <Github className="w-4 h-4" />, url: "https://github.com/Tityapong/we_soccer.git" },
     ],
   },
   {
