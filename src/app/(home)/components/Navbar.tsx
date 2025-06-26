@@ -1,5 +1,4 @@
 "use client" 
-import { ModeToggleDarkMode } from "@/components/Darkmode"
 import Link from "next/link"
 import { SiGithub, SiTelegram, SiLinkedin } from "react-icons/si"
 import { motion } from "framer-motion"
@@ -73,9 +72,9 @@ export default function Navbar() {
             </motion.div>
           )
         })}
-        <motion.div variants={itemVariants}>
+        {/* <motion.div variants={itemVariants}>
           <ModeToggleDarkMode />
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </motion.nav>
   )

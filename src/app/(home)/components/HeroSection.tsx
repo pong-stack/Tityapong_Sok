@@ -85,7 +85,7 @@ export default function Hero() {
               variants={itemVariants}
             >
               <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-              <span className="text-xs sm:text-sm font-medium text-blue-300">Available for opportunities</span>
+              <span className="text-xs sm:text-sm font-medium text-blue-300 hidden sm:block">Available for opportunities</span>
             </motion.div>
 
             {/* Main Heading */}
