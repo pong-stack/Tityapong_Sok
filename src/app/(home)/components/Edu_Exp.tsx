@@ -32,7 +32,7 @@ const experiences: Experience[] = [
     startDate: "2025",
     endDate: "Present",
     description: [
-      "Designed and implemented UI for the attendance dashboard",
+    
       "Wrote and tested Vue.js components to ensure correct functionality",
       "Reviewed and debugged code to maintain high code quality and performance",
       "Ensured maintainability by following clean code practices and component reusability",
