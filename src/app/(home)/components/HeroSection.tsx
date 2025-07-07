@@ -1,10 +1,18 @@
-"use client"
-import Image from "next/image"
-import Link from "next/link"
-import { aboutMe } from "@/assets"
-import { MovingBorderBtn } from "@/components/ui/moving-border"
-import { motion } from "framer-motion"
-import { ArrowRight, Download, Mail, MapPin, Code, Sparkles } from "lucide-react"
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { aboutMe } from "@/assets";
+import { MovingBorderBtn } from "@/components/ui/moving-border";
+import { motion } from "framer-motion";
+import {
+  ArrowRight,
+  Download,
+  Mail,
+  MapPin,
+  Code,
+  Sparkles,
+} from "lucide-react";
 
 export default function Hero() {
   const containerVariants = {
@@ -16,7 +24,7 @@ export default function Hero() {
         delayChildren: 0.1,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 30, opacity: 0 },
@@ -29,7 +37,7 @@ export default function Hero() {
         damping: 12,
       },
     },
-  }
+  };
 
   const floatingVariants = {
     animate: {
@@ -40,28 +48,27 @@ export default function Hero() {
         ease: "easeInOut",
       },
     },
-  }
+  };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-gray-900 transition-colors duration-300">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] md:bg-[size:50px_50px] sm:bg-[size:30px_30px]" />
+
 
       {/* Floating Particles - Hidden on mobile for performance */}
       <motion.div
-        className="absolute top-16 left-4 sm:top-20 sm:left-20 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500/30 rounded-full hidden sm:block"
+        className="absolute top-16 left-4 sm:top-20 sm:left-20 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500/20 dark:bg-blue-500/30 rounded-full hidden sm:block"
         variants={floatingVariants}
         animate="animate"
       />
       <motion.div
-        className="absolute top-32 right-8 sm:top-40 sm:right-32 w-1 h-1 bg-purple-500/40 rounded-full hidden sm:block"
+        className="absolute top-32 right-8 sm:top-40 sm:right-32 w-1 h-1 bg-purple-500/30 dark:bg-purple-500/40 rounded-full hidden sm:block"
         variants={floatingVariants}
         animate="animate"
         transition={{ delay: 1 }}
       />
       <motion.div
-        className="absolute bottom-24 left-8 sm:bottom-32 sm:left-40 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-cyan-500/30 rounded-full hidden sm:block"
+        className="absolute bottom-24 left-8 sm:bottom-32 sm:left-40 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-cyan-500/20 dark:bg-cyan-500/30 rounded-full hidden sm:block"
         variants={floatingVariants}
         animate="animate"
         transition={{ delay: 2 }}
@@ -81,65 +88,66 @@ export default function Hero() {
           >
             {/* Badge */}
             <motion.div
-              className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 dark:border-blue-500/20 backdrop-blur-sm"
               variants={itemVariants}
             >
-              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-400" />
-              <span className="text-xs sm:text-sm font-medium text-blue-300 hidden sm:block">Available for opportunities</span>
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 dark:text-blue-400" />
+              <span className="text-xs sm:text-sm font-medium text-blue-600 dark:text-blue-300 hidden sm:block">
+                Available for opportunities
+              </span>
             </motion.div>
 
             {/* Main Heading */}
-            <motion.div variants={itemVariants} className="space-y-3 sm:space-y-4">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-3 sm:space-y-4"
+            >
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-                <span className="block text-white">Hi, I am</span>
-                <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                <span className="block text-gray-900 dark:text-white">
+                  Hi, I am
+                </span>
+                <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 dark:from-blue-400 dark:via-purple-400 dark:to-cyan-400 bg-clip-text text-transparent">
                   Tityapong
                 </span>
               </h1>
-              <div className="flex items-center justify-center lg:justify-start gap-2 text-gray-400">
+              <div className="flex items-center justify-center lg:justify-start gap-2 text-gray-600 dark:text-gray-400">
                 <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="text-sm sm:text-base">Phnom Penh, Cambodia</span>
+                <span className="text-sm sm:text-base">
+                  Phnom Penh, Cambodia
+                </span>
               </div>
             </motion.div>
 
             {/* Role & Description */}
-            <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-4 sm:space-y-6"
+            >
               <div className="flex items-center justify-center lg:justify-start gap-2">
-                <Code className="w-4 h-4 sm:w-5 sm:h-5 text-blue-400" />
-                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-200">Full Stack Web Developer</h2>
+                <Code className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 dark:text-blue-400" />
+                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 dark:text-gray-200">
+                  Full Stack Web Developer
+                </h2>
               </div>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Passionate IT Engineering student at Royal University of Phnom Penh, specializing in modern web
-                development. I craft digital experiences using cutting-edge technologies like React, Next.js, and
-                Node.js. Always eager to learn and build innovative solutions.
+              <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                Passionate IT Engineering student at Royal University of Phnom
+                Penh, specializing in modern web development. I craft digital
+                experiences using cutting-edge technologies like React, Next.js,
+                and Node.js. Always eager to learn and build innovative
+                solutions.
               </p>
             </motion.div>
 
-            {/* Tech Stack Preview */}
-            <motion.div variants={itemVariants} className="space-y-3">
-              <p className="text-xs sm:text-sm font-medium text-gray-400 uppercase tracking-wider">Tech Stack</p>
-              <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3">
-                {["React", "Next.js", "Node.js", "TypeScript", "MySQL"].map((tech) => (
-                  <motion.span
-                    key={tech}
-                    className="px-2 py-1 sm:px-3 sm:py-1 text-xs sm:text-sm font-medium bg-gray-800/50 text-blue-300 rounded-full border border-gray-700/50 backdrop-blur-sm"
-                    whileHover={{ scale: 1.05, backgroundColor: "rgba(59, 130, 246, 0.1)" }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    {tech}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* CTA Buttons */}
             <motion.div
               variants={itemVariants}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
             >
-              <Link href="mailto:tityapong77@gmail.com" className="group w-full sm:w-auto">
+              <Link
+                href="mailto:tityapong77@gmail.com"
+                className="group w-full sm:w-auto"
+              >
                 <motion.button
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/25 text-sm sm:text-base"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-600 dark:to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 dark:hover:from-blue-700 dark:hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/25 text-sm sm:text-base"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -148,9 +156,8 @@ export default function Hero() {
                   <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </Link>
-
               <motion.button
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-gray-800/50 text-gray-200 font-semibold rounded-xl border border-gray-700/50 hover:bg-gray-700/50 hover:border-gray-600/50 transition-all duration-300 backdrop-blur-sm text-sm sm:text-base"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-gray-100 dark:bg-gray-800/50 text-gray-700 dark:text-gray-200 font-semibold rounded-xl border border-gray-200 dark:border-gray-700/50 hover:bg-gray-200 dark:hover:bg-gray-700/50 hover:border-gray-300 dark:hover:border-gray-600/50 transition-all duration-300 backdrop-blur-sm text-sm sm:text-base"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -167,7 +174,7 @@ export default function Hero() {
           >
             <div className="relative">
               {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-2xl scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-500/20 dark:to-purple-500/20 rounded-2xl blur-2xl scale-110" />
 
               {/* Main Image Container */}
               <motion.div
@@ -177,8 +184,8 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 {/* Image Border */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-2xl p-1">
-                  <div className="w-full h-full bg-gray-900 rounded-2xl overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 dark:from-blue-500 dark:via-purple-500 dark:to-cyan-500 rounded-2xl p-1">
+                  <div className="w-full h-full bg-gray-50 dark:bg-gray-900 rounded-2xl overflow-hidden">
                     <Image
                       className="object-cover w-full h-full"
                       src={aboutMe || "/placeholder.svg?height=450&width=450"}
@@ -199,22 +206,28 @@ export default function Hero() {
                 >
                   <MovingBorderBtn
                     borderRadius="0.75rem"
-                    className="bg-gray-900/90 backdrop-blur-sm border-gray-700/50 px-3 py-2 sm:px-6 sm:py-3"
+                    className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-gray-200 dark:border-gray-700/50 px-3 py-2 sm:px-6 sm:py-3"
                   >
                     <div className="flex items-center gap-2">
                       <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-pulse" />
-                      <span className="text-gray-200 font-medium text-xs sm:text-sm">Open to Work</span>
+                      <span className="text-gray-700 dark:text-gray-200 font-medium text-xs sm:text-sm">
+                        Open to Work
+                      </span>
                     </div>
                   </MovingBorderBtn>
                 </motion.div>
 
                 {/* Floating Elements */}
                 <motion.div
-                  className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full backdrop-blur-sm border border-blue-500/30 flex items-center justify-center"
+                  className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-500/20 dark:to-purple-500/20 rounded-full backdrop-blur-sm border border-blue-500/20 dark:border-blue-500/30 flex items-center justify-center"
                   animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
+                  transition={{
+                    duration: 20,
+                    repeat: Number.POSITIVE_INFINITY,
+                    ease: "linear",
+                  }}
                 >
-                  <Code className="w-6 h-6 sm:w-8 sm:h-8 text-blue-400" />
+                  <Code className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500 dark:text-blue-400" />
                 </motion.div>
               </motion.div>
             </div>
@@ -222,5 +235,5 @@ export default function Hero() {
         </div>
       </motion.div>
     </div>
-  )
+  );
 }

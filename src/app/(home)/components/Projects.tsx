@@ -9,6 +9,19 @@ import Title from "./Tittle" // Assuming Tittle.tsx exists and works
 // Define project data with updated details
 const projects = [
   {
+    id: "ticket-provider-api",
+    title: "Ticket Provider API",
+    period: "Nov 2024 - Jan 2025",
+    description:
+      "Comprehensive ticket management system with API endpoints for event ticketing. Features include ticket creation, booking management, user authentication, and real-time availability tracking.",
+    imageUrl: "/ticker-api.png",
+    technologies: ["Next.js", "shadcn/ui", "Tailwind CSS", "PHP", "Laravel"],
+    links: [
+      { label: "Website", icon: <Globe className="w-4 h-4" />, url: "#" },
+      { label: "Source", icon: <Github className="w-4 h-4" />, url: "#" },
+    ],
+  },
+  {
     id: "we-soccer",
     title: "We Soccer",
     period: "Jan 2025 - Mar 2025",
@@ -43,7 +56,6 @@ const projects = [
     imageUrl: "/booking_hotel.png",
     technologies: ["HTML", "CSS", "Bootstrap"],
     links: [
-      // Make sure these URLs are correct or intended placeholders
       { label: "Website", icon: <Globe className="w-4 h-4" />, url: "/" },
       { label: "Source", icon: <Github className="w-4 h-4" />, url: "/" },
     ],
@@ -76,6 +88,7 @@ export default function PortfolioShowcase() {
             <Title text="Projects Experience" className="inline-block" />
           </div>
         </div>
+
         <div className="pt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4">
           {projects.map((project) => (
             <ProjectCard
@@ -138,8 +151,8 @@ function ProjectCard({ title, period, description, imageUrl, technologies, links
             <span
               key={index}
               className="px-2.5 py-1 rounded-full text-xs border border-transparent transition-all duration-200 hover:text-white hover:shadow-sm
-    dark:bg-gradient-to-r dark:from-zinc-800 dark:to-zinc-900 dark:text-zinc-300 dark:hover:from-zinc-700 dark:hover:to-zinc-800 dark:hover:border-zinc-600
-    bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 hover:from-gray-200 hover:to-gray-300 hover:border-gray-300"
+                dark:bg-gradient-to-r dark:from-zinc-800 dark:to-zinc-900 dark:text-zinc-300 dark:hover:from-zinc-700 dark:hover:to-zinc-800 dark:hover:border-zinc-600
+                bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700 hover:from-gray-200 hover:to-gray-300 hover:border-gray-300"
             >
               {tech}
             </span>
@@ -165,4 +178,3 @@ function ProjectCard({ title, period, description, imageUrl, technologies, links
     </div>
   )
 }
-

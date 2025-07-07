@@ -1,6 +1,5 @@
 "use client"
 
-import type React from "react"
 import { useState, useEffect, useRef } from "react"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence, useMotionValue, useTransform, useSpring } from "framer-motion"
@@ -9,12 +8,21 @@ interface PageTransitionProps {
   children: React.ReactNode
 }
 
+// Define a type for the particle's style property
+interface ParticleStyle {
+  width: number
+  height: number
+  left: string
+  top: string
+}
+
 export default function PageTransition({ children }: PageTransitionProps) {
   const pathname = usePathname()
   const [isAnimating, setIsAnimating] = useState(true)
   const [pageTitle, setPageTitle] = useState("")
   const [showContent, setShowContent] = useState(false)
   const [windowWidth, setWindowWidth] = useState(0)
+  const [particles, setParticles] = useState<{ id: number; style: ParticleStyle }[]>([])
   const containerRef = useRef<HTMLDivElement>(null)
 
   // Mouse tracking for 3D effect
@@ -35,17 +43,30 @@ export default function PageTransition({ children }: PageTransitionProps) {
       setWindowWidth(window.innerWidth)
     }
 
-    // Set initial width
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       setWindowWidth(window.innerWidth)
-      window.addEventListener('resize', handleResize)
+      window.addEventListener("resize", handleResize)
     }
 
     return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleResize)
+      if (typeof window !== "undefined") {
+        window.removeEventListener("resize", handleResize)
       }
     }
+  }, [])
+
+  // Generate particles on client side only
+  useEffect(() => {
+    const newParticles = Array.from({ length: 15 }, (_, index) => ({
+      id: index,
+      style: {
+        width: Math.floor(Math.random() * 6) + 2,
+        height: Math.floor(Math.random() * 6) + 2,
+        left: `${Math.random() * 100}%`,
+        top: `${Math.random() * 100}%`,
+      },
+    }))
+    setParticles(newParticles)
   }, [])
 
   // Handle mouse movement for 3D effect
@@ -60,13 +81,13 @@ export default function PageTransition({ children }: PageTransitionProps) {
       }
     }
 
-    if (typeof window !== 'undefined' && containerRef.current) {
-      window.addEventListener('mousemove', handleMouseMove)
+    if (typeof window !== "undefined" && containerRef.current) {
+      window.addEventListener("mousemove", handleMouseMove)
     }
 
     return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('mousemove', handleMouseMove)
+      if (typeof window !== "undefined") {
+        window.removeEventListener("mousemove", handleMouseMove)
       }
     }
   }, [mouseX, mouseY])
@@ -168,19 +189,14 @@ export default function PageTransition({ children }: PageTransitionProps) {
                   </motion.span>
                 ))}
               </motion.div>
-              
+
               {/* Floating particles for depth effect */}
               <div className="absolute inset-0 pointer-events-none">
-                {Array.from({ length: 15 }).map((_, index) => (
+                {particles.map((particle) => (
                   <motion.div
-                    key={`particle-${index}`}
+                    key={`particle-${particle.id}`}
                     className="absolute rounded-full bg-white opacity-20"
-                    style={{
-                      width: Math.floor(Math.random() * 6) + 2,
-                      height: Math.floor(Math.random() * 6) + 2,
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`,
-                    }}
+                    style={particle.style}
                     animate={{
                       y: [0, Math.random() * -100, 0],
                       x: [0, Math.random() * 50 - 25, 0],
@@ -203,8 +219,8 @@ export default function PageTransition({ children }: PageTransitionProps) {
             {/* Animated line underneath with 3D glow effect */}
             <motion.div
               className="absolute h-[2px] bg-gradient-to-r from-transparent via-white to-transparent"
-              style={{ 
-                bottom: windowWidth < 640 ? "35%" : "30%", 
+              style={{
+                bottom: windowWidth < 640 ? "35%" : "30%",
                 left: "50%",
                 transform: "translateX(-50%)",
                 boxShadow: "0 0 20px rgba(255,255,255,0.5), 0 0 40px rgba(255,255,255,0.3), 0 0 80px rgba(255,255,255,0.2)",
@@ -222,7 +238,7 @@ export default function PageTransition({ children }: PageTransitionProps) {
                 times: [0, 0.2, 0.8, 1],
               }}
             />
-            
+
             {/* Ambient glow effect */}
             <motion.div
               className="absolute rounded-full blur-3xl opacity-20"

@@ -9,19 +9,15 @@ import Bar from "./components/Bar";
 
 export default function page() {
   return (
-    <>
+   
       <div className=" min-h-screen bg-black">
         <div className="dark:bg-black bg-white  dark:bg-grid-white/[0.05] bg-grid-black/[0.2]">
-          <div className=" max-w-7xl mx-auto ">
+          <div className=" w-full mx-auto ">
             <Navbar />
             <Hero />
             <Bar />
           </div>
-
-          {/* <div className=" h-10 xl:h-32 ">
-
-        </div> */}
-          <div className=" max-w-7xl mx-auto mt-20 ">
+          <div className=" w-full mx-auto mt-20 ">
             <Resume />
             <Skill />
             <Projects />
@@ -29,6 +25,6 @@ export default function page() {
           </div>
         </div>
       </div>
-    </>
+    
   );
 }
