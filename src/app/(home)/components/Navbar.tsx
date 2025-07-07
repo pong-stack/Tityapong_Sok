@@ -83,7 +83,7 @@ export default function Navbar() {
         </motion.h1>
 
         {/* Social Links and Theme Toggle */}
-        <motion.div className="flex items-center gap-4" variants={containerVariants} initial="hidden" animate="visible">
+        <motion.div className="flex items-center  space-x-1" variants={containerVariants} initial="hidden" animate="visible">
           {/* Social Icons */}
           {socials.map((social, index) => {
             const Icon = social.icon
