@@ -11,14 +11,14 @@ const projects = [
   {
     id: "ticket-provider-api",
     title: "Ticket Provider API",
-    period: "Nov 2024 - Jan 2025",
+    period: "Feb 2025 - May 2025",
     description:
       "Comprehensive ticket management system with API endpoints for event ticketing. Features include ticket creation, booking management, user authentication, and real-time availability tracking.",
     imageUrl: "/ticker-api.png",
     technologies: ["Next.js", "shadcn/ui", "Tailwind CSS", "PHP", "Laravel"],
     links: [
-      { label: "Website", icon: <Globe className="w-4 h-4" />, url: "#" },
-      { label: "Source", icon: <Github className="w-4 h-4" />, url: "#" },
+   
+      { label: "Source", icon: <Github className="w-4 h-4" />, url: "https://github.com/Tityapong/Ticket-Provider.git" },
     ],
   },
   {
@@ -56,7 +56,7 @@ const projects = [
     imageUrl: "/booking_hotel.png",
     technologies: ["HTML", "CSS", "Bootstrap"],
     links: [
-      { label: "Website", icon: <Globe className="w-4 h-4" />, url: "/" },
+      { label: "Website", icon: <Globe className="w-4 h-4" />, url: "http://antstudents.com/WebScholarshipS2/Group-7/ProjectCSS_Booking%26Tour/index.html" },
       { label: "Source", icon: <Github className="w-4 h-4" />, url: "/" },
     ],
   },

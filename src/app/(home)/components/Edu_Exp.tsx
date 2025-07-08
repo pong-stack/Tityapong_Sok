@@ -39,7 +39,7 @@ const experiences: Experience[] = [
       "Ensured maintainability by following clean code practices and component reusability",
     ],
     technologies: ["Vue.js", "JavaScript", "CSS", "HTML", "Tailwind CSS"],
-    url: "https://gonoka.com/",
+    url: "https://www.cotafer.group/",
   },
   {
     company: "Event Appointment",
@@ -58,7 +58,7 @@ const experiences: Experience[] = [
   {
     company: "ANT Training Center - MPTC",
     logo: "/ant.png", // Added leading slash
-    role: "Web Development Student (Full Scholarship)",
+    role: "Web Development Training (Full Scholarship)",
     startDate: "Jan 2024",
     endDate: "Mar 2025",
     description: [
