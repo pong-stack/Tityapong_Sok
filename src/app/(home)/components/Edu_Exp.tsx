@@ -31,8 +31,8 @@ const experiences: Experience[] = [
     company: "Cotafer Co., Ltd",
     logo: "/cotafer_logo.jpeg", // Added leading slash
     role: "Web Developer",
-    startDate: "2025",
-    endDate: "Present",
+    startDate: "mar 2025",
+    endDate: "jun 2025",
     description: [
       "Wrote and tested Vue.js components to ensure correct functionality",
       "Reviewed and debugged code to maintain high code quality and performance",
