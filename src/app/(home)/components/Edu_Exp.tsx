@@ -29,10 +29,10 @@ interface Education {
 const experiences: Experience[] = [
   {
     company: "Cotafer Co., Ltd",
-    logo: "/cotafer_logo.jpeg", // Added leading slash
+    logo: "/cotafer_logo.jpeg",
     role: "Web Developer",
-    startDate: "mar 2025",
-    endDate: "jun 2025",
+    startDate: "Mar 2025",
+    endDate: "Jun 2025",
     description: [
       "Wrote and tested Vue.js components to ensure correct functionality",
       "Reviewed and debugged code to maintain high code quality and performance",
@@ -43,7 +43,7 @@ const experiences: Experience[] = [
   },
   {
     company: "Event Appointment",
-    logo: "/logoevent.png", // Added leading slash
+    logo: "/logoevent.png",
     role: "Web Developer",
     startDate: "Aug 2024",
     endDate: "Dec 2024",
@@ -57,7 +57,7 @@ const experiences: Experience[] = [
   },
   {
     company: "ANT Training Center - MPTC",
-    logo: "/ant.png", // Added leading slash
+    logo: "/ant.png",
     role: "Web Development Training (Full Scholarship)",
     startDate: "Jan 2024",
     endDate: "Mar 2025",
@@ -76,7 +76,7 @@ const experiences: Experience[] = [
 const education: Education[] = [
   {
     institution: "Royal University of Phnom Penh",
-    logo: "/rupp.png", // Added leading slash
+    logo: "/rupp.jpeg",
     degree: "Bachelor of Information Technology Engineering",
     startDate: "Mar 2022",
     endDate: "Present",
@@ -84,7 +84,7 @@ const education: Education[] = [
   },
   {
     institution: "ANT Technology Training Center",
-    logo: "/ant.png", // Added leading slash
+    logo: "/ant.png",
     degree: "Fullstack Web Developer",
     startDate: "Jan 2024",
     endDate: "Mar 2025",
@@ -101,13 +101,13 @@ const CardWrapper = ({ children, url }: CardWrapperProps) => {
   const content = (
     <div className="group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800/50 bg-gradient-to-br from-white via-gray-50/80 to-gray-100/60 dark:from-gray-900/80 dark:via-gray-900/60 dark:to-gray-800/40 p-6 backdrop-blur-md transition-all duration-500 hover:border-blue-500/50 hover:shadow-[0_8px_40px_-12px_rgba(59,130,246,0.25)] hover:-translate-y-2 cursor-pointer">
       {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 via-purple-600/5 to-cyan-600/5 dark:from-blue-600/10 dark:via-purple-600/10 dark:to-cyan-600/10 opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
+      <div className="absolute inset-0 bg-blue-500/10 dark:bg-blue-500/20 opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
 
       {/* Subtle grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:20px_20px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
       {/* Glow effect */}
-      <div className="absolute -inset-1 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 dark:from-blue-500/20 dark:via-purple-500/20 dark:to-cyan-500/20 rounded-2xl opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
+      <div className="absolute -inset-1 bg-blue-500/10 dark:bg-blue-500/20 rounded-2xl opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
 
       <div className="relative z-10">
         {children}
@@ -144,7 +144,7 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => (
       <div className="flex items-start gap-5 flex-1">
         {/* Company Logo */}
         <div className="relative h-14 w-14 overflow-hidden rounded-full ring-2 ring-gray-300 dark:ring-gray-700/50 group-hover:ring-blue-500/50 transition-all duration-500 hover:scale-110 flex-shrink-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 dark:from-blue-500/20 dark:to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-blue-500/10 dark:bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           <Image
             src={experience.logo || "/placeholder.svg?height=56&width=56"}
             alt={`${experience.company} logo`}
@@ -158,7 +158,7 @@ const ExperienceCard = ({ experience }: ExperienceCardProps) => (
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-3">
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-purple-600 dark:group-hover:from-blue-400 dark:group-hover:to-purple-400 transition-all duration-500">
+              <h2 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent group-hover:from-blue-500 group-hover:to-blue-600 dark:group-hover:from-blue-400 dark:group-hover:to-blue-500 transition-all duration-500">
                 {experience.company}
               </h2>
               <p className="text-blue-600 dark:text-blue-400 font-semibold text-sm sm:text-base group-hover:text-blue-500 dark:group-hover:text-blue-300 transition-colors duration-300">
@@ -213,7 +213,7 @@ const EducationCard = ({ education }: EducationCardProps) => (
       <div className="flex items-start gap-5 flex-1">
         {/* Institution Logo */}
         <div className="relative h-14 w-14 overflow-hidden rounded-full ring-2 ring-gray-300 dark:ring-gray-700/50 group-hover:ring-blue-500/50 transition-all duration-500 hover:scale-110 flex-shrink-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 dark:from-blue-500/20 dark:to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-blue-500/10 dark:bg-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           <Image
             src={education.logo || "/placeholder.svg?height=56&width=56"}
             alt={`${education.institution} logo`}
@@ -227,7 +227,7 @@ const EducationCard = ({ education }: EducationCardProps) => (
           {/* Header */}
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
             <div>
-              <h2 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-purple-600 dark:group-hover:from-blue-400 dark:group-hover:to-purple-400 transition-all duration-500">
+              <h2 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent group-hover:from-blue-500 group-hover:to-blue-600 dark:group-hover:from-blue-400 dark:group-hover:to-blue-500 transition-all duration-500">
                 {education.institution}
               </h2>
               <p className="text-blue-600 dark:text-blue-400 font-semibold text-sm sm:text-base group-hover:text-blue-500 dark:group-hover:text-blue-300 transition-colors duration-300">

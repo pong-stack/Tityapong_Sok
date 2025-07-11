@@ -53,22 +53,20 @@ export default function Hero() {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-gray-900 transition-colors duration-300">
       {/* Background Elements */}
-
-
       {/* Floating Particles - Hidden on mobile for performance */}
       <motion.div
-        className="absolute top-16 left-4 sm:top-20 sm:left-20 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500/20 dark:bg-blue-500/30 rounded-full hidden sm:block"
+        className="absolute top-16 left-4 sm:top-20 sm:left-20 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500/20 dark:bg-blue-600/30 rounded-full hidden sm:block"
         variants={floatingVariants}
         animate="animate"
       />
       <motion.div
-        className="absolute top-32 right-8 sm:top-40 sm:right-32 w-1 h-1 bg-purple-500/30 dark:bg-purple-500/40 rounded-full hidden sm:block"
+        className="absolute top-32 right-8 sm:top-40 sm:right-32 w-1 h-1 bg-blue-500/30 dark:bg-blue-600/40 rounded-full hidden sm:block"
         variants={floatingVariants}
         animate="animate"
         transition={{ delay: 1 }}
       />
       <motion.div
-        className="absolute bottom-24 left-8 sm:bottom-32 sm:left-40 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-cyan-500/20 dark:bg-cyan-500/30 rounded-full hidden sm:block"
+        className="absolute bottom-24 left-8 sm:bottom-32 sm:left-40 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-blue-500/20 dark:bg-blue-600/30 rounded-full hidden sm:block"
         variants={floatingVariants}
         animate="animate"
         transition={{ delay: 2 }}
@@ -88,7 +86,7 @@ export default function Hero() {
           >
             {/* Badge */}
             <motion.div
-              className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 dark:border-blue-500/20 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-blue-500/10 border border-blue-500/20 dark:border-blue-600/20 backdrop-blur-sm"
               variants={itemVariants}
             >
               <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 dark:text-blue-400" />
@@ -106,7 +104,7 @@ export default function Hero() {
                 <span className="block text-gray-900 dark:text-white">
                   Hi, I am
                 </span>
-                <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 dark:from-blue-400 dark:via-purple-400 dark:to-cyan-400 bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-500 dark:to-blue-300 bg-clip-text text-transparent">
                   Tityapong
                 </span>
               </h1>
@@ -147,7 +145,7 @@ export default function Hero() {
                 className="group w-full sm:w-auto"
               >
                 <motion.button
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-600 dark:to-purple-600 text-white font-semibold rounded-xl hover:from-blue-700 hover:to-purple-700 dark:hover:from-blue-700 dark:hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/25 text-sm sm:text-base"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-4 bg-blue-600 dark:bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 dark:hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-blue-500/25 text-sm sm:text-base"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -174,7 +172,7 @@ export default function Hero() {
           >
             <div className="relative">
               {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-500/20 dark:to-purple-500/20 rounded-2xl blur-2xl scale-110" />
+              <div className="absolute inset-0 bg-blue-500/10 dark:bg-blue-600/20 rounded-2xl blur-2xl scale-110" />
 
               {/* Main Image Container */}
               <motion.div
@@ -184,7 +182,7 @@ export default function Hero() {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 {/* Image Border */}
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 dark:from-blue-500 dark:via-purple-500 dark:to-cyan-500 rounded-2xl p-1">
+                <div className="absolute inset-0 bg-blue-500 dark:bg-blue-600 rounded-2xl p-1">
                   <div className="w-full h-full bg-gray-50 dark:bg-gray-900 rounded-2xl overflow-hidden">
                     <Image
                       className="object-cover w-full h-full"
@@ -209,7 +207,7 @@ export default function Hero() {
                     className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border-gray-200 dark:border-gray-700/50 px-3 py-2 sm:px-6 sm:py-3"
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-500 rounded-full animate-pulse" />
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500 dark:bg-blue-600 rounded-full animate-pulse" />
                       <span className="text-gray-700 dark:text-gray-200 font-medium text-xs sm:text-sm">
                         Open to Work
                       </span>
@@ -219,7 +217,7 @@ export default function Hero() {
 
                 {/* Floating Elements */}
                 <motion.div
-                  className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-blue-500/10 to-purple-500/10 dark:from-blue-500/20 dark:to-purple-500/20 rounded-full backdrop-blur-sm border border-blue-500/20 dark:border-blue-500/30 flex items-center justify-center"
+                  className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-16 h-16 sm:w-20 sm:h-20 bg-blue-500/10 dark:bg-blue-600/20 rounded-full backdrop-blur-sm border border-blue-500/20 dark:border-blue-600/30 flex items-center justify-center"
                   animate={{ rotate: 360 }}
                   transition={{
                     duration: 20,

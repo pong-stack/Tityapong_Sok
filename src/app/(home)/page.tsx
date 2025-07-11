@@ -6,25 +6,26 @@ import Projects from "./components/Projects";
 import Footer from "./components/ Footer";
 import Resume from "./components/Edu_Exp";
 import Bar from "./components/Bar";
+import GalleryComponent from "./components/portfolio-gallery";
+
 
 export default function page() {
   return (
    
-      <div className=" min-h-screen bg-black">
-        <div className="dark:bg-black bg-white  dark:bg-grid-white/[0.05] bg-grid-black/[0.2]">
-          <div className=" w-full mx-auto ">
-            <Navbar />
-            <Hero />
-            <Bar />
-          </div>
-          <div className=" w-full mx-auto mt-20 ">
-            <Resume />
-            <Skill />
-            <Projects />
-            <Footer />
-          </div>
-        </div>
-      </div>
+    <div className="min-h-screen">
+    <div className="w-full mx-auto">
+      <Navbar />
+      <Hero />
+      <Bar />
+    </div>
+    <div className="w-full mx-auto mt-20">
+      <Resume />
+      <GalleryComponent />
+      <Skill />
+      <Projects />
+      <Footer />
+    </div>
+  </div>
     
   );
 }
