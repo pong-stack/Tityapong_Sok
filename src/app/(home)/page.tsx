@@ -16,11 +16,12 @@ export default function page() {
     <div className="w-full mx-auto">
       <Navbar />
       <Hero />
+      <GalleryComponent />
       <Bar />
     </div>
     <div className="w-full mx-auto mt-20">
       <Resume />
-      <GalleryComponent />
+     
       <Skill />
       <Projects />
       <Footer />
