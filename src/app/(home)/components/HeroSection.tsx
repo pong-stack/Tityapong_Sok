@@ -1,9 +1,10 @@
+
 "use client"
 
-
 import { motion, AnimatePresence } from "framer-motion"
-import {  MapPin, Code, Sparkles } from "lucide-react"
+import { MapPin, Code, Sparkles } from "lucide-react"
 import { useState, useEffect } from "react"
+import { DotLottieReact } from "@lottiefiles/dotlottie-react"
 
 export default function Hero() {
   const roles = ["Front-end", "Back-end", "Full Stack"]
@@ -13,6 +14,7 @@ export default function Hero() {
     const interval = setInterval(() => {
       setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length)
     }, 3000) // Change role every 3 seconds
+
     return () => clearInterval(interval)
   }, [roles.length])
 
@@ -60,12 +62,7 @@ export default function Hero() {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-gray-900 transition-colors duration-300">
       {/* Background Elements */}
-      {/* Floating Particles - Hidden on mobile for performance */}
-      <motion.div
-        className="absolute top-16 left-4 sm:top-20 sm:left-20 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-blue-500/20 dark:bg-blue-600/30 rounded-full hidden sm:block"
-        variants={floatingVariants}
-        animate="animate"
-      />
+
       <motion.div
         className="absolute top-32 right-8 sm:top-40 sm:right-32 w-1 h-1 bg-blue-500/30 dark:bg-blue-600/40 rounded-full hidden sm:block"
         variants={floatingVariants}
@@ -85,16 +82,19 @@ export default function Hero() {
         animate="visible"
         variants={containerVariants}
       >
-        <div className="grid grid-cols-1 gap-8 sm:gap-12 lg:gap-16 items-center justify-center">
-          {/* Text Content */}
-          <motion.div className="order-2 lg:order-1 space-y-6 sm:space-y-8 text-center" variants={containerVariants}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center min-h-[80vh]">
+          {/* Left Column - Text Content */}
+          <motion.div
+            className="order-2 lg:order-1 space-y-6 sm:space-y-8 text-center lg:text-left"
+            variants={containerVariants}
+          >
             {/* Badge */}
             <motion.div
               className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-blue-500/10 border border-blue-500/20 dark:border-blue-600/20 backdrop-blur-sm"
               variants={itemVariants}
             >
               <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 dark:text-blue-400" />
-              <span className="text-xs sm:text-sm font-medium text-blue-600 dark:text-blue-300 hidden sm:block">
+              <span className="text-xs sm:text-sm font-medium text-blue-600 dark:text-blue-300">
                 Available for opportunities
               </span>
             </motion.div>
@@ -107,7 +107,7 @@ export default function Hero() {
                   Tityapong
                 </span>
               </h1>
-              <div className="flex items-center justify-center gap-2 text-gray-600 dark:text-gray-400">
+              <div className="flex items-center justify-center lg:justify-start gap-2 text-gray-600 dark:text-gray-400">
                 <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span className="text-sm sm:text-base">Phnom Penh, Cambodia</span>
               </div>
@@ -115,7 +115,7 @@ export default function Hero() {
 
             {/* Role & Description */}
             <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6">
-              <div className="flex items-center justify-center gap-2">
+              <div className="flex items-center justify-center lg:justify-start gap-2">
                 <Code className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 dark:text-blue-400" />
                 <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 dark:text-gray-200 h-8 flex items-center">
                   <AnimatePresence mode="wait">
@@ -135,14 +135,29 @@ export default function Hero() {
                   </AnimatePresence>
                 </h2>
               </div>
-              <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto">
+
+              <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                 Passionate IT Engineering student at Royal University of Phnom Penh, specializing in modern web
                 development. I craft digital experiences using cutting-edge technologies like React, Next.js, and
                 Node.js. Always eager to learn and build innovative solutions.
               </p>
             </motion.div>
 
-          
+         
+          </motion.div>
+
+        
+          <motion.div className="order-1 lg:order-2 flex items-center justify-center" variants={itemVariants}>
+            <div className="relative w-full max-w-lg">
+              <div className="rounded-lg overflow-hidden w-full h-full mt-6 md:mt-0">
+                <DotLottieReact
+                  src="/Isometric data analysis.lottie"
+                  loop
+                  autoplay
+                  className="w-full h-auto"
+                />
+              </div>
+            </div>
           </motion.div>
         </div>
       </motion.div>
