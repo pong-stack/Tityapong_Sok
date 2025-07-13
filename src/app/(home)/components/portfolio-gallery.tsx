@@ -58,6 +58,14 @@ export default function Component() {
       tabletSpan: "md:row-span-1",
       desktopSpan: "lg:row-span-2",
     },
+    {
+      id: 7,
+      src: "/g7.jpg",
+      alt: "City Lights Bokeh",
+      mobileSpan: "row-span-1",
+      tabletSpan: "md:row-span-1",
+      desktopSpan: "lg:row-span-2",
+    },
   ]
 
   const openModal = (imageId: number) => {

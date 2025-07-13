@@ -7,7 +7,6 @@ import PageTransition from "@/components/page-transition";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
-// Define metadata for SEO
 export const metadata: Metadata = {
   title: {
     default: "Sok Tityapong | Web Developer Portfolio",
