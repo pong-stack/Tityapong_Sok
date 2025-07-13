@@ -1,9 +1,9 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Space_Grotesk } from "next/font/google"
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import PageTransition from "@/components/page-transition"
+import type React from "react";
+import type { Metadata } from "next";
+import { Space_Grotesk } from "next/font/google";
+import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import PageTransition from "@/components/page-transition";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     siteName: "Sok Tityapong Portfolio",
     images: [
       {
-        url: "/og-image.png", // Ensure this exists in /public
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Sok Tityapong Web Developer Portfolio",
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     title: "Sok Tityapong | Web Developer Portfolio",
     description:
       "Explore the portfolio of Sok Tityapong, featuring TypeScript and Next.js projects for modern, responsive web applications.",
-    images: ["/og-image.png"], // Ensure this exists
-    creator: "@SokTityapong", // Replace with your actual Twitter handle
+    images: ["/og-image.png"],
+    creator: "@SokTityapong",
   },
   robots: {
     index: true,
@@ -93,6 +93,10 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="UTF-8" />
+        <meta
+          name="google-site-verification"
+          content="CKavVruBbhpIoMV8MnJCQh2Z0GMZWxKXxFgC8G0_U5Q"
+        />
         <link rel="sitemap" href="/sitemap.xml" />
         {/* Structured data for SEO */}
         <script
@@ -105,9 +109,9 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
               jobTitle: "Web Developer",
               url: "https://tityapong-dev.vercel.app",
               sameAs: [
-                "https://linkedin.com/in/sok-tityapong", // Replace with your LinkedIn
-                "https://github.com/sok-tityapong", // Replace with your GitHub
-                "https://twitter.com/SokTityapong", // Replace with your Twitter
+                "https://linkedin.com/in/sok-tityapong",
+                "https://github.com/sok-tityapong",
+                "https://twitter.com/SokTityapong",
               ],
               description:
                 "Sok Tityapong is a web developer specializing in TypeScript, Next.js, and React, building responsive and user-friendly applications.",
