@@ -5,7 +5,7 @@ import Skill from "./components/Skill";
 import Projects from "./components/Projects";
 import Footer from "./components/ Footer";
 import Resume from "./components/Edu_Exp";
-import Bar from "./components/Bar";
+
 import GalleryComponent from "./components/portfolio-gallery";
 
 
@@ -17,7 +17,7 @@ export default function page() {
       <Navbar />
       <Hero />
       <GalleryComponent />
-      <Bar />
+     
     </div>
     <div className="w-full mx-auto mt-20">
       <Resume />

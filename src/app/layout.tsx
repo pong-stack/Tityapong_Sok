@@ -4,10 +4,12 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import PageTransition from "@/components/page-transition";
+import DockBar from "./(home)/components/Bar";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://tityapong-dev.vercel.app"), // Added to fix the warning
   title: {
     default: "Sok Tityapong | Web Developer Portfolio",
     template: "%s | Sok Tityapong",
@@ -125,7 +127,9 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
           enableSystem={false}
           disableTransitionOnChange
         >
-          <PageTransition>{children}</PageTransition>
+          <PageTransition>{children}
+          <DockBar /> 
+          </PageTransition>
         </ThemeProvider>
       </body>
     </html>

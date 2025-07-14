@@ -1,15 +1,15 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import { HomeIcon, NotebookIcon, Moon, Sun, Github, Linkedin, Youtube, Mail, Send } from "lucide-react";
-import { Dock, DockIcon } from "@/components/magicui/dock";
-import { buttonVariants } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { cn } from "@/lib/utils";
-import { useTheme } from "next-themes";
+import Link from "next/link"
+import { HomeIcon, Award, Moon, Sun, Github, Linkedin, Youtube, Mail, Send } from "lucide-react"
+import { Dock, DockIcon } from "@/components/magicui/dock"
+import { buttonVariants } from "@/components/ui/button"
+import { Separator } from "@/components/ui/separator"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip"
+import { cn } from "@/lib/utils"
+import { useTheme } from "next-themes"
 
-// Icons object for social media and other icons
+
 const Icons = {
   github: Github,
   linkedin: Linkedin,
@@ -18,13 +18,13 @@ const Icons = {
   sun: Sun,
   moon: Moon,
   telegram: Send,
-};
+}
 
 // Data structure for navbar and contact information
 const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    { href: "/certificate", icon: Award, label: "Certificate" },
   ],
   contact: {
     email: "hello@example.com",
@@ -48,7 +48,6 @@ const DATA = {
         icon: Icons.telegram,
         navbar: true,
       },
-    
       email: {
         name: "Send Email",
         url: "#",
@@ -57,11 +56,11 @@ const DATA = {
       },
     },
   },
-};
+}
 
 // ModeToggle component for theme switching
 function ModeToggle() {
-  const { setTheme, theme } = useTheme();
+  const { setTheme, theme } = useTheme()
 
   return (
     <button
@@ -73,7 +72,7 @@ function ModeToggle() {
       <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
       <span className="sr-only">Toggle theme</span>
     </button>
-  );
+  )
 }
 
 // DockBar component
@@ -133,5 +132,5 @@ export default function DockBar() {
         </Dock>
       </div>
     </TooltipProvider>
-  );
+  )
 }
