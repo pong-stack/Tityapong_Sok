@@ -70,6 +70,17 @@ const certificates: Certificate[] = [
     "description": "Assisted with the preparation and distribution of exam papers, and served as an examination invigilator for the Angkor Math Competition, ensuring a fair and organized testing environment.",
     "type": "volunteer"
   },
+  {
+    "id": 6,
+    "title": "Intern Program With Spring batch 20",
+    "organization": "Spring Education Center",
+    "image": "/intern-program.jpg",
+    "issueDate": "August 2023",
+    "skills": ["Marketing", "Communication", "Teamwork", "Problem Solving"],
+    "description": "Interned at Spring Education Center, where I learned about marketing strategies and worked on real-world projects to gain practical experience in the field of marketing.",
+    "type": "achievement"
+  },
+
 
 ]
 
