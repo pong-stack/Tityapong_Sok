@@ -9,13 +9,13 @@ import DockBar from "./(home)/components/Bar";
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://tityapong-dev.vercel.app"), // Added to fix the warning
+  metadataBase: new URL("https://tityapong-dev.vercel.app"),
   title: {
     default: "Sok Tityapong | Web Developer Portfolio",
     template: "%s | Sok Tityapong",
   },
   description:
-    "Portfolio of Sok Tityapong, a skilled web developer specializing in TypeScript, Next.js, and React. Explore modern, responsive web projects and contact details.",
+    "Portfolio of Sok Tityapong, a skilled web developer specializing in TypeScript, Next.js, and React. Explore modern, responsive web projects.",
   keywords: [
     "Sok Tityapong",
     "web developer",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sok Tityapong | Web Developer Portfolio",
     description:
-      "Discover Sok Tityapong's portfolio, showcasing expertise in TypeScript, Next.js, and React for building modern web applications.",
+      "Discover Sok Tityapong's portfolio, showcasing expertise in TypeScript, Next.js, and React.",
     url: "https://tityapong-dev.vercel.app",
     siteName: "Sok Tityapong Portfolio",
     images: [
@@ -54,34 +54,18 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
   alternates: {
     canonical: "https://tityapong-dev.vercel.app",
   },
   icons: {
     icon: [
-      {
-        url: "/pong.png",
-        href: "/pong.png",
-        sizes: "any",
-        type: "image/png",
-      },
-      {
-        url: "/favicon.ico",
-        href: "/favicon.ico",
-        type: "image/x-icon",
-      },
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/pong.png", type: "image/png" },
     ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
 };
+
 
 // Define props type for RootLayout
 interface RootLayoutProps {
@@ -98,8 +82,7 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
           name="google-site-verification"
           content="CKavVruBbhpIoMV8MnJCQh2Z0GMZWxKXxFgC8G0_U5Q"
         />
-        <link rel="sitemap" href="/sitemap.xml" />
-        {/* Structured data for SEO */}
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
