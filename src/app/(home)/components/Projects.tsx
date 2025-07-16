@@ -1,11 +1,12 @@
 "use client"
+
 import type React from "react"
 import Image from "next/image"
 import { Globe, Github, ChevronLeft, ChevronRight, Zap } from "lucide-react"
 import { useState } from "react"
 import Title from "./Tittle" // Assuming Tittle.tsx exists and works
 
-// Define project data with updated details and multiple images
+
 const projects = [
   {
     id: "ticket-provider-api",
@@ -37,8 +38,18 @@ const projects = [
     period: "Jan 2025 - Mar 2025",
     description:
       "Platform for booking football fields and finding teams. Users can apply to find teams. Admins manage beverage orders, accept/reject bookings with email/Telegram notifications.",
-    images: ["/we-soccer.png", "/we1.png", "/we2.png", "/we3.png", "/we4.png", "/we5.png", "/we6.png", "/we7.png", "/we8.png" ],
-    technologies: ["Node.js", "Express", "MySQL", "EJS" , "JWT", "Socket.io" ,"nodemailer", "Telegram Bot API"],
+    images: [
+      "/we-soccer.png",
+      "/we1.png",
+      "/we2.png",
+      "/we3.png",
+      "/we4.png",
+      "/we5.png",
+      "/we6.png",
+      "/we7.png",
+      "/we8.png",
+    ],
+    technologies: ["Node.js", "Express", "MySQL", "EJS", "JWT", "Socket.io", "nodemailer", "Telegram Bot API"],
     features: [
       "Football field booking system",
       "Team finding and application",
@@ -73,7 +84,7 @@ const projects = [
       "/b8.png",
       "/b9.png",
     ],
-    technologies: ["Node.js", "Express", "MySQL", "Next.js", "TypeScript", "Tailwind CSS", "JWT" ],  
+    technologies: ["Node.js", "Express", "MySQL", "Next.js", "TypeScript", "Tailwind CSS", "JWT"],
     features: [
       "Event service listings",
       "Category management (CRUD)",
@@ -121,7 +132,7 @@ const projects = [
     period: "June 2023 - Sep 2023",
     description:
       "E-commerce platform featuring product listing, product creation capabilities, and user authentication.",
-    images: ["/Ecommerce.png", "/e1.png", "/e2.png","/e3.png", "/e4.png","/e5.png" , "/e6.png" ],
+    images: ["/Ecommerce.png", "/e1.png", "/e2.png", "/e3.png", "/e4.png", "/e5.png", "/e6.png"],
     technologies: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB", "JWT"],
     features: [
       "Product catalog",
@@ -153,7 +164,6 @@ export default function PortfolioShowcase() {
             <Title text="Projects Experience" className="inline-block" />
           </div>
         </div>
-
         <div className="pt-12 space-y-6">
           {projects.map((project) => (
             <ProjectListItem
@@ -190,137 +200,128 @@ interface ProjectProps {
 // ProjectListItem component with image on left and content on right (50/50 split)
 function ProjectListItem({ title, period, description, images, technologies, features, links }: ProjectProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [imageLoaded, setImageLoaded] = useState(false)
 
   const nextImage = () => {
-    setImageLoaded(false)
     setCurrentImageIndex((prev) => (prev + 1) % images.length)
   }
 
   const prevImage = () => {
-    setImageLoaded(false)
     setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length)
   }
 
   const goToImage = (index: number) => {
-    setImageLoaded(false)
     setCurrentImageIndex(index)
   }
 
   return (
     <div className="bg-card border border-border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_15px_rgba(120,120,255,0.15)]">
-    <div className="flex flex-col md:flex-row min-h-[250px]">
-  {/* Image Section - Left Side (50% width, full height) */}
-  <div className="md:w-1/2 relative overflow-hidden aspect-[4/2] md:aspect-[16/9]">
-    {/* Set aspect ratio for consistency */}
-    <Image
-      src={images[currentImageIndex] || "/placeholder.svg"}
-      alt={`${title} screenshot ${currentImageIndex + 1}`}
-      fill
-      className={`object-contain transition-opacity duration-300 ${
-        imageLoaded ? "opacity-100" : "opacity-0"
-      }`} // Changed to object-contain to show full image
-      onLoad={() => setImageLoaded(true)}
-      priority
-    
-    />
-    {!imageLoaded && (
-      <div className="absolute inset-0 bg-muted animate-pulse" />
-    )}
-    {/* Navigation Controls */}
-    {images.length > 1 && (
-      <>
-        <button
-          onClick={prevImage}
-          className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm shadow-lg"
-          aria-label="Previous image"
-        >
-          <ChevronLeft className="w-4 h-4" />
-        </button>
-        <button
-          onClick={nextImage}
-          className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm shadow-lg"
-          aria-label="Next image"
-        >
-          <ChevronRight className="w-4 h-4" />
-        </button>
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToImage(index)}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
-                index === currentImageIndex
-                  ? "bg-white scale-125 shadow-lg"
-                  : "bg-white/60 hover:bg-white/80"
+      <div className="flex flex-col md:flex-row min-h-[250px]">
+        {/* Image Section - Left Side (50% width, full height) */}
+        <div className="md:w-1/2 relative overflow-hidden aspect-[4/2] md:aspect-[16/9]">
+          {images.map((imageSrc, index) => (
+            <Image
+              key={imageSrc} // Unique key for each image
+              src={imageSrc || "/placeholder.svg"}
+              alt={`${title} screenshot ${index + 1}`}
+              fill
+              className={`object-contain transition-opacity duration-300 ${
+                index === currentImageIndex ? "opacity-100 relative" : "opacity-0 absolute inset-0"
               }`}
-              aria-label={`Go to image ${index + 1}`}
+              // `priority` can be added to the first image of the first project if it's critical for LCP.
+              // For a carousel, it's often better to let next/image lazy load hidden images.
             />
           ))}
-        </div>
-        <div className="absolute top-3 right-3 bg-black/60 text-white px-2 py-1 rounded-full text-xs backdrop-blur-sm shadow-lg">
-          {currentImageIndex + 1} / {images.length}
-        </div>
-      </>
-    )}
-  </div>
-  {/* Content Section - Right Side (50% width) */}
-  <div className="md:w-1/2 p-6 flex flex-col justify-between">
-    <div>
-      <h2 className="text-2xl font-bold mb-2">{title}</h2>
-      <p className="text-muted-foreground text-sm mb-4">{period}</p>
-      <p className="text-foreground/80 mb-6 leading-relaxed">{description}</p>
-      {/* Features - Clean List Style */}
-      <div className="mb-6">
-        <div className="flex items-center gap-2 mb-3">
-          <Zap className="w-4 h-4 text-primary" />
-          <h3 className="font-semibold text-sm">Key Features</h3>
-        </div>
-        <div className="bg-muted/20 rounded-md p-3 border border-border/50">
-          <div className="grid grid-cols-1 gap-1.5 max-h-32 overflow-y-auto">
-            {features.map((feature, index) => (
-              <div key={index} className="flex items-center gap-2 text-sm py-1">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
-                <span className="text-foreground/90">{feature}</span>
+
+          {/* Navigation Controls */}
+          {images.length > 1 && (
+            <>
+              <button
+                onClick={prevImage}
+                className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm shadow-lg z-10"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm shadow-lg z-10"
+                aria-label="Next image"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                {images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToImage(index)}
+                    className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
+                      index === currentImageIndex ? "bg-white scale-125 shadow-lg" : "bg-white/60 hover:bg-white/80"
+                    }`}
+                    aria-label={`Go to image ${index + 1}`}
+                  />
+                ))}
               </div>
+              <div className="absolute top-3 right-3 bg-black/60 text-white px-2 py-1 rounded-full text-xs backdrop-blur-sm shadow-lg z-10">
+                {currentImageIndex + 1} / {images.length}
+              </div>
+            </>
+          )}
+        </div>
+        {/* Content Section - Right Side (50% width) */}
+        <div className="md:w-1/2 p-6 flex flex-col justify-between">
+          <div>
+            <h2 className="text-2xl font-bold mb-2">{title}</h2>
+            <p className="text-muted-foreground text-sm mb-4">{period}</p>
+            <p className="text-foreground/80 mb-6 leading-relaxed">{description}</p>
+            {/* Features - Clean List Style */}
+            <div className="mb-6">
+              <div className="flex items-center gap-2 mb-3">
+                <Zap className="w-4 h-4 text-primary" />
+                <h3 className="font-semibold text-sm">Key Features</h3>
+              </div>
+              <div className="bg-muted/20 rounded-md p-3 border border-border/50">
+                <div className="grid grid-cols-1 gap-1.5 max-h-32 overflow-y-auto">
+                  {features.map((feature, index) => (
+                    <div key={index} className="flex items-center gap-2 text-sm py-1">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
+                      <span className="text-foreground/90">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            {/* Technologies */}
+            <div className="mb-6">
+              <h3 className="font-semibold mb-2 text-sm">Technologies:</h3>
+              <div className="flex flex-wrap gap-1.5">
+                {technologies.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="px-2.5 py-1 rounded-full text-xs border border-transparent transition-all duration-200                dark:bg-gradient-to-r dark:from-zinc-800 dark:to-zinc-900 dark:text-zinc-300                bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+          {/* Links - Bottom of content */}
+          <div className="flex gap-2 mt-auto">
+            {links.map((link, index) => (
+              <a
+                key={index}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 hover:bg-primary/20 transition-colors rounded-full text-sm text-primary"
+              >
+                {link.icon}
+                <span>{link.label}</span>
+              </a>
             ))}
           </div>
         </div>
       </div>
-      {/* Technologies */}
-      <div className="mb-6">
-        <h3 className="font-semibold mb-2 text-sm">Technologies:</h3>
-        <div className="flex flex-wrap gap-1.5">
-          {technologies.map((tech, index) => (
-            <span
-              key={index}
-              className="px-2.5 py-1 rounded-full text-xs border border-transparent transition-all duration-200
-                dark:bg-gradient-to-r dark:from-zinc-800 dark:to-zinc-900 dark:text-zinc-300
-                bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-    {/* Links - Bottom of content */}
-    <div className="flex gap-2 mt-auto">
-      {links.map((link, index) => (
-        <a
-          key={index}
-          href={link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 hover:bg-primary/20 transition-colors rounded-full text-sm text-primary"
-        >
-          {link.icon}
-          <span>{link.label}</span>
-        </a>
-      ))}
-    </div>
-  </div>
-</div>
     </div>
   )
 }

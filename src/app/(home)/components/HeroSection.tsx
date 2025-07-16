@@ -1,22 +1,21 @@
+"use client";
 
-"use client"
-
-import { motion, AnimatePresence } from "framer-motion"
-import { MapPin, Code, Sparkles } from "lucide-react"
-import { useState, useEffect } from "react"
-import { DotLottieReact } from "@lottiefiles/dotlottie-react"
+import { motion, AnimatePresence } from "framer-motion";
+import { MapPin, Code, Briefcase } from "lucide-react";
+import { useState, useEffect } from "react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 export default function Hero() {
-  const roles = ["Front-end", "Back-end", "Full Stack"]
-  const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
+  const roles = ["Front-end", "Back-end", "Full Stack"];
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length)
-    }, 3000) // Change role every 3 seconds
+      setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
+    }, 3000); // Change role every 3 seconds
 
-    return () => clearInterval(interval)
-  }, [roles.length])
+    return () => clearInterval(interval);
+  }, [roles.length]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -27,7 +26,7 @@ export default function Hero() {
         delayChildren: 0.1,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: 30, opacity: 0 },
@@ -40,13 +39,13 @@ export default function Hero() {
         damping: 12,
       },
     },
-  }
+  };
 
   const roleVariants = {
     enter: { opacity: 0, y: -20 },
     center: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: 20 },
-  }
+  };
 
   const floatingVariants = {
     animate: {
@@ -57,7 +56,7 @@ export default function Hero() {
         ease: "easeInOut",
       },
     },
-  }
+  };
 
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white dark:bg-gray-900 transition-colors duration-300">
@@ -90,31 +89,43 @@ export default function Hero() {
           >
             {/* Badge */}
             <motion.div
-              className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-blue-500/10 border border-blue-500/20 dark:border-blue-600/20 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-green-500/10 border border-green-500/20 dark:border-green-600/20 backdrop-blur-sm"
               variants={itemVariants}
             >
-              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-blue-500 dark:text-blue-400" />
-              <span className="text-xs sm:text-sm font-medium text-blue-600 dark:text-blue-300">
+              {/* Replace Sparkles with a work/bag or dollar icon */}
+              <Briefcase className="w-3 h-3 sm:w-4 sm:h-4 text-green-500 dark:text-green-400" />{" "}
+              {/* or use DollarSign */}
+              <span className="text-xs sm:text-sm font-medium text-green-600 dark:text-green-300">
                 Available for opportunities
               </span>
             </motion.div>
 
             {/* Main Heading */}
-            <motion.div variants={itemVariants} className="space-y-3 sm:space-y-4">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-3 sm:space-y-4"
+            >
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-                <span className="block text-gray-900 dark:text-white">Hi, I am</span>
+                <span className="block text-gray-900 dark:text-white">
+                  Hi, I am
+                </span>
                 <span className="block bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-500 dark:to-blue-300 bg-clip-text text-transparent">
                   Tityapong
                 </span>
               </h1>
               <div className="flex items-center justify-center lg:justify-start gap-2 text-gray-600 dark:text-gray-400">
                 <MapPin className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span className="text-sm sm:text-base">Phnom Penh, Cambodia</span>
+                <span className="text-sm sm:text-base">
+                  Phnom Penh, Cambodia
+                </span>
               </div>
             </motion.div>
 
             {/* Role & Description */}
-            <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-4 sm:space-y-6"
+            >
               <div className="flex items-center justify-center lg:justify-start gap-2">
                 <Code className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500 dark:text-blue-400" />
                 <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 dark:text-gray-200 h-8 flex items-center">
@@ -137,17 +148,19 @@ export default function Hero() {
               </div>
 
               <p className="text-sm sm:text-base lg:text-lg text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                Passionate IT Engineering student at Royal University of Phnom Penh, specializing in modern web
-                development. I craft digital experiences using cutting-edge technologies like React, Next.js, and
-                Node.js. Always eager to learn and build innovative solutions.
+                Passionate IT Engineering student at Royal University of Phnom
+                Penh, specializing in modern web development. I craft digital
+                experiences using cutting-edge technologies like React, Next.js,
+                and Node.js. Always eager to learn and build innovative
+                solutions.
               </p>
             </motion.div>
-
-         
           </motion.div>
 
-        
-          <motion.div className="order-1 lg:order-2 flex items-center justify-center" variants={itemVariants}>
+          <motion.div
+            className="order-1 lg:order-2 flex items-center justify-center"
+            variants={itemVariants}
+          >
             <div className="relative w-full max-w-lg">
               <div className="rounded-lg overflow-hidden w-full h-full mt-6 md:mt-0">
                 <DotLottieReact
@@ -162,5 +175,5 @@ export default function Hero() {
         </div>
       </motion.div>
     </div>
-  )
+  );
 }
