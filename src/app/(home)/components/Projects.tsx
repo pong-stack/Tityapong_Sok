@@ -4,8 +4,7 @@ import type React from "react"
 import Image from "next/image"
 import { Globe, Github, ChevronLeft, ChevronRight, Zap } from "lucide-react"
 import { useState } from "react"
-import Title from "./Tittle" // Assuming Tittle.tsx exists and works
-
+import Title from "./Tittle" // Assuming Title.tsx exists and works
 
 const projects = [
   {
@@ -62,8 +61,16 @@ const projects = [
       "Booking calendar",
     ],
     links: [
-      { label: "Website", icon: <Globe className="w-4 h-4" />, url: "https://www.wesoccer.publicvm.com/" },
-      { label: "Source", icon: <Github className="w-4 h-4" />, url: "https://github.com/Tityapong/we_soccer.git" },
+      {
+        label: "Website",
+        icon: <Globe className="w-4 h-4" />,
+        url: "https://www.wesoccer.publicvm.com/",
+      },
+      {
+        label: "Source",
+        icon: <Github className="w-4 h-4" />,
+        url: "https://github.com/Tityapong/we_soccer.git",
+      },
     ],
   },
   {
@@ -97,8 +104,16 @@ const projects = [
       "Service provider profiles",
     ],
     links: [
-      { label: "Website", icon: <Globe className="w-4 h-4" />, url: "https://book-my-event-pink.vercel.app/" },
-      { label: "Source", icon: <Github className="w-4 h-4" />, url: "https://github.com/Tityapong/BookMyEvent.git" },
+      {
+        label: "Website",
+        icon: <Globe className="w-4 h-4" />,
+        url: "https://book-my-event-pink.vercel.app/",
+      },
+      {
+        label: "Source",
+        icon: <Github className="w-4 h-4" />,
+        url: "https://github.com/Tityapong/BookMyEvent.git",
+      },
     ],
   },
   {
@@ -150,7 +165,11 @@ const projects = [
         icon: <Globe className="w-4 h-4" />,
         url: "https://ecommerce-frontend-lemon-sigma.vercel.app/",
       },
-      { label: "Source", icon: <Github className="w-4 h-4" />, url: "https://github.com/Tityapong/Ecommerce-App.git" },
+      {
+        label: "Source",
+        icon: <Github className="w-4 h-4" />,
+        url: "https://github.com/Tityapong/Ecommerce-App.git",
+      },
     ],
   },
 ]
@@ -231,7 +250,6 @@ function ProjectListItem({ title, period, description, images, technologies, fea
               // For a carousel, it's often better to let next/image lazy load hidden images.
             />
           ))}
-
           {/* Navigation Controls */}
           {images.length > 1 && (
             <>
@@ -280,7 +298,8 @@ function ProjectListItem({ title, period, description, images, technologies, fea
                 <h3 className="font-semibold text-sm">Key Features</h3>
               </div>
               <div className="bg-muted/20 rounded-md p-3 border border-border/50">
-                <div className="grid grid-cols-1 gap-1.5 max-h-32 overflow-y-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                  {/* Removed max-h-32 and overflow-y-auto */}
                   {features.map((feature, index) => (
                     <div key={index} className="flex items-center gap-2 text-sm py-1">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>

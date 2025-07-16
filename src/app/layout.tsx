@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import PageTransition from "@/components/page-transition";
+// import PageTransition from "@/components/page-transition";
 import DockBar from "./(home)/components/Bar";
 import { Analytics } from '@vercel/analytics/next';
 
@@ -108,10 +108,10 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
           enableSystem={false}
           disableTransitionOnChange
         >
-          <PageTransition>{children}
+    {children}
           <DockBar /> 
           <Analytics />
-          </PageTransition>
+        
         </ThemeProvider>
       </body>
     </html>
