@@ -2,9 +2,28 @@
 
 import type React from "react"
 import Image from "next/image"
-import { Globe, Github, ChevronLeft, ChevronRight, Zap } from "lucide-react"
 import { useState } from "react"
-import Title from "./Tittle" // Assuming Title.tsx exists and works
+import {
+  SiGithub,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiPhp,
+  SiLaravel,
+  SiNodedotjs,
+  SiExpress,
+  SiMysql,
+  SiJavascript,
+  SiJsonwebtokens,
+  SiSocketdotio,
+  SiTypescript,
+  SiReact,
+  SiMongodb,
+  SiHtml5,
+  SiCss3,
+  SiBootstrap,
+} from "react-icons/si"
+import { FaGlobe, FaChevronLeft, FaChevronRight, FaBolt } from "react-icons/fa"
+import Title from "./Tittle"
 
 const projects = [
   {
@@ -26,7 +45,7 @@ const projects = [
     links: [
       {
         label: "Source",
-        icon: <Github className="w-4 h-4" />,
+        icon: <SiGithub className="w-4 h-4" />,
         url: "https://github.com/Tityapong/Ticket-Provider.git",
       },
     ],
@@ -63,12 +82,12 @@ const projects = [
     links: [
       {
         label: "Website",
-        icon: <Globe className="w-4 h-4" />,
+        icon: <FaGlobe className="w-4 h-4" />,
         url: "https://www.wesoccer.publicvm.com/",
       },
       {
         label: "Source",
-        icon: <Github className="w-4 h-4" />,
+        icon: <SiGithub className="w-4 h-4" />,
         url: "https://github.com/Tityapong/we_soccer.git",
       },
     ],
@@ -106,12 +125,12 @@ const projects = [
     links: [
       {
         label: "Website",
-        icon: <Globe className="w-4 h-4" />,
+        icon: <FaGlobe className="w-4 h-4" />,
         url: "https://book-my-event-pink.vercel.app/",
       },
       {
         label: "Source",
-        icon: <Github className="w-4 h-4" />,
+        icon: <SiGithub className="w-4 h-4" />,
         url: "https://github.com/Tityapong/BookMyEvent.git",
       },
     ],
@@ -135,10 +154,14 @@ const projects = [
     links: [
       {
         label: "Website",
-        icon: <Globe className="w-4 h-4" />,
+        icon: <FaGlobe className="w-4 h-4" />,
         url: "http://antstudents.com/WebScholarshipS2/Group-7/ProjectCSS_Booking%26Tour/index.html",
       },
-      { label: "Source", icon: <Github className="w-4 h-4" />, url: "/" },
+      {
+        label: "Source",
+        icon: <SiGithub className="w-4 h-4" />,
+        url: "/",
+      },
     ],
   },
   {
@@ -162,17 +185,151 @@ const projects = [
     links: [
       {
         label: "Website",
-        icon: <Globe className="w-4 h-4" />,
+        icon: <FaGlobe className="w-4 h-4" />,
         url: "https://ecommerce-frontend-lemon-sigma.vercel.app/",
       },
       {
         label: "Source",
-        icon: <Github className="w-4 h-4" />,
+        icon: <SiGithub className="w-4 h-4" />,
         url: "https://github.com/Tityapong/Ecommerce-App.git",
       },
     ],
   },
 ]
+
+// Technology configuration with icons and brand colors
+const getTechConfig = (tech: string) => {
+  const techConfig: { [key: string]: { icon: React.ReactNode; bgColor: string; textColor: string } } = {
+    "Next.js": {
+      icon: <SiNextdotjs className="w-3 h-3" />,
+      bgColor: "bg-black dark:bg-white",
+      textColor: "text-white dark:text-black",
+    },
+    "Tailwind CSS": {
+      icon: <SiTailwindcss className="w-3 h-3" />,
+      bgColor: "bg-[#06B6D4]",
+      textColor: "text-white",
+    },
+    PHP: {
+      icon: <SiPhp className="w-3 h-3" />,
+      bgColor: "bg-[#777BB4]",
+      textColor: "text-white",
+    },
+    Laravel: {
+      icon: <SiLaravel className="w-3 h-3" />,
+      bgColor: "bg-[#FF2D20]",
+      textColor: "text-white",
+    },
+    "Node.js": {
+      icon: <SiNodedotjs className="w-3 h-3" />,
+      bgColor: "bg-[#339933]",
+      textColor: "text-white",
+    },
+    Express: {
+      icon: <SiExpress className="w-3 h-3" />,
+      bgColor: "bg-[#000000] dark:bg-[#ffffff]",
+      textColor: "text-white dark:text-black",
+    },
+    MySQL: {
+      icon: <SiMysql className="w-3 h-3" />,
+      bgColor: "bg-[#4479A1]",
+      textColor: "text-white",
+    },
+    JavaScript: {
+      icon: <SiJavascript className="w-3 h-3" />,
+      bgColor: "bg-[#F7DF1E]",
+      textColor: "text-black",
+    },
+    JWT: {
+      icon: <SiJsonwebtokens className="w-3 h-3" />,
+      bgColor: "bg-[#000000] dark:bg-[#ffffff]",
+      textColor: "text-white dark:text-black",
+    },
+    "Socket.io": {
+      icon: <SiSocketdotio className="w-3 h-3" />,
+      bgColor: "bg-[#010101] dark:bg-[#ffffff]",
+      textColor: "text-white dark:text-black",
+    },
+    TypeScript: {
+      icon: <SiTypescript className="w-3 h-3" />,
+      bgColor: "bg-[#3178C6]",
+      textColor: "text-white",
+    },
+    React: {
+      icon: <SiReact className="w-3 h-3" />,
+      bgColor: "bg-[#61DAFB]",
+      textColor: "text-black",
+    },
+    MongoDB: {
+      icon: <SiMongodb className="w-3 h-3" />,
+      bgColor: "bg-[#47A248]",
+      textColor: "text-white",
+    },
+    HTML: {
+      icon: <SiHtml5 className="w-3 h-3" />,
+      bgColor: "bg-[#E34F26]",
+      textColor: "text-white",
+    },
+    CSS: {
+      icon: <SiCss3 className="w-3 h-3" />,
+      bgColor: "bg-[#1572B6]",
+      textColor: "text-white",
+    },
+    Bootstrap: {
+      icon: <SiBootstrap className="w-3 h-3" />,
+      bgColor: "bg-[#7952B3]",
+      textColor: "text-white",
+    },
+    EJS: {
+      icon: (
+        <div className="w-3 h-3 bg-[#90A93A] rounded-sm flex items-center justify-center text-[8px] font-bold text-white">
+          E
+        </div>
+      ),
+      bgColor: "bg-[#90A93A]",
+      textColor: "text-white",
+    },
+    nodemailer: {
+      icon: (
+        <div className="w-3 h-3 bg-[#0F9D58] rounded-sm flex items-center justify-center text-[8px] font-bold text-white">
+          @
+        </div>
+      ),
+      bgColor: "bg-[#0F9D58]",
+      textColor: "text-white",
+    },
+    "Telegram Bot API": {
+      icon: (
+        <div className="w-3 h-3 bg-[#0088CC] rounded-sm flex items-center justify-center text-[8px] font-bold text-white">
+          T
+        </div>
+      ),
+      bgColor: "bg-[#0088CC]",
+      textColor: "text-white",
+    },
+    "shadcn/ui": {
+      icon: (
+        <div className="w-3 h-3 bg-[#000000] dark:bg-[#ffffff] rounded-sm flex items-center justify-center text-[8px] font-bold text-white dark:text-black">
+          S
+        </div>
+      ),
+      bgColor: "bg-[#000000] dark:bg-[#ffffff]",
+      textColor: "text-white dark:text-black",
+    },
+  }
+
+  return (
+    techConfig[tech] || {
+      icon: (
+        <div className="w-3 h-3 bg-gray-500 rounded-sm flex items-center justify-center text-[8px] font-bold text-white">
+          {tech.charAt(0)}
+        </div>
+      ),
+      bgColor: "bg-gray-500",
+      textColor: "text-white",
+    }
+  )
+}
 
 export default function PortfolioShowcase() {
   return (
@@ -183,6 +340,7 @@ export default function PortfolioShowcase() {
             <Title text="Projects Experience" className="inline-block" />
           </div>
         </div>
+
         <div className="pt-12 space-y-6">
           {projects.map((project) => (
             <ProjectListItem
@@ -216,7 +374,6 @@ interface ProjectProps {
   }[]
 }
 
-// ProjectListItem component with image on left and content on right (50/50 split)
 function ProjectListItem({ title, period, description, images, technologies, features, links }: ProjectProps) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
@@ -239,17 +396,16 @@ function ProjectListItem({ title, period, description, images, technologies, fea
         <div className="md:w-1/2 relative overflow-hidden aspect-[4/2] md:aspect-[16/9]">
           {images.map((imageSrc, index) => (
             <Image
-              key={imageSrc} // Unique key for each image
+              key={imageSrc}
               src={imageSrc || "/placeholder.svg"}
               alt={`${title} screenshot ${index + 1}`}
               fill
               className={`object-contain transition-opacity duration-300 ${
                 index === currentImageIndex ? "opacity-100 relative" : "opacity-0 absolute inset-0"
               }`}
-              // `priority` can be added to the first image of the first project if it's critical for LCP.
-              // For a carousel, it's often better to let next/image lazy load hidden images.
             />
           ))}
+
           {/* Navigation Controls */}
           {images.length > 1 && (
             <>
@@ -258,14 +414,14 @@ function ProjectListItem({ title, period, description, images, technologies, fea
                 className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm shadow-lg z-10"
                 aria-label="Previous image"
               >
-                <ChevronLeft className="w-4 h-4" />
+                <FaChevronLeft className="w-4 h-4" />
               </button>
               <button
                 onClick={nextImage}
                 className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 text-white p-2 rounded-full transition-all duration-200 backdrop-blur-sm shadow-lg z-10"
                 aria-label="Next image"
               >
-                <ChevronRight className="w-4 h-4" />
+                <FaChevronRight className="w-4 h-4" />
               </button>
               <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
                 {images.map((_, index) => (
@@ -285,21 +441,22 @@ function ProjectListItem({ title, period, description, images, technologies, fea
             </>
           )}
         </div>
+
         {/* Content Section - Right Side (50% width) */}
         <div className="md:w-1/2 p-6 flex flex-col justify-between">
           <div>
             <h2 className="text-2xl font-bold mb-2">{title}</h2>
             <p className="text-muted-foreground text-sm mb-4">{period}</p>
             <p className="text-foreground/80 mb-6 leading-relaxed">{description}</p>
+
             {/* Features - Clean List Style */}
             <div className="mb-6">
               <div className="flex items-center gap-2 mb-3">
-                <Zap className="w-4 h-4 text-primary" />
+                <FaBolt className="w-4 h-4 text-primary" />
                 <h3 className="font-semibold text-sm">Key Features</h3>
               </div>
               <div className="bg-muted/20 rounded-md p-3 border border-border/50">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-                  {/* Removed max-h-32 and overflow-y-auto */}
                   {features.map((feature, index) => (
                     <div key={index} className="flex items-center gap-2 text-sm py-1">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0"></div>
@@ -309,21 +466,27 @@ function ProjectListItem({ title, period, description, images, technologies, fea
                 </div>
               </div>
             </div>
-            {/* Technologies */}
+
+            {/* Technologies with Brand Colors */}
             <div className="mb-6">
               <h3 className="font-semibold mb-2 text-sm">Technologies:</h3>
               <div className="flex flex-wrap gap-1.5">
-                {technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="px-2.5 py-1 rounded-full text-xs border border-transparent transition-all duration-200                dark:bg-gradient-to-r dark:from-zinc-800 dark:to-zinc-900 dark:text-zinc-300                bg-gradient-to-r from-gray-100 to-gray-200 text-gray-700"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                {technologies.map((tech, index) => {
+                  const config = getTechConfig(tech)
+                  return (
+                    <span
+                      key={index}
+                      className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium transition-all duration-200 hover:scale-105 hover:shadow-md ${config.bgColor} ${config.textColor}`}
+                    >
+                      {config.icon}
+                      {tech}
+                    </span>
+                  )
+                })}
               </div>
             </div>
           </div>
+
           {/* Links - Bottom of content */}
           <div className="flex gap-2 mt-auto">
             {links.map((link, index) => (
@@ -332,7 +495,7 @@ function ProjectListItem({ title, period, description, images, technologies, fea
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 hover:bg-primary/20 transition-colors rounded-full text-sm text-primary"
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-primary/10 hover:bg-primary/20 transition-colors rounded-full text-sm text-primary hover:scale-105"
               >
                 {link.icon}
                 <span>{link.label}</span>

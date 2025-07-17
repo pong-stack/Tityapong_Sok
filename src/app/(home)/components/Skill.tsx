@@ -78,7 +78,7 @@ export default function Skill() {
     {
       category: "Design & Deployment",
       skills: [
-        { name: "Figma", icon: SiFigma, color: "#F24E1E" },
+        { name: "Figma", icon: SiFigma, color: "#9747FF" },
         { name: "Vercel", icon: SiVercel, color: "#FFFFFF" }, // Changed to white for visibility
         { name: "Render", icon: SiRender, color: "#46E3B7" },
         { name: "Railway", icon: SiRailway, color: "#FFFFFF" }, // Changed to white for visibility
