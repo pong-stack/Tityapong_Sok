@@ -81,9 +81,9 @@ const projects = [
     ],
     links: [
       {
-        label: "Website",
+        label: "Video Demo",
         icon: <FaGlobe className="w-4 h-4" />,
-        url: "https://www.wesoccer.publicvm.com/",
+        url: "https://youtu.be/qiVKt4XoSdE?si=kXYicxF1z-yYVX5Q",
       },
       {
         label: "Source",
