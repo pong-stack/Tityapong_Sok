@@ -28,7 +28,7 @@ export default function Component() {
     },
     {
       id: 3,
-      src: "/g3.jpg",
+      src: "/g8.jpg",
       alt: "Dark Rose",
       mobileSpan: "row-span-2",
       tabletSpan: "md:row-span-2",

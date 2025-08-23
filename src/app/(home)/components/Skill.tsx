@@ -10,7 +10,7 @@ import {
   SiVuedotjs,
   SiNodedotjs,
   SiExpress,
-  SiGraphql,
+
   SiPostman,
   SiMysql,
   SiGit,
@@ -60,7 +60,7 @@ export default function Skill() {
       category: "API & Testing",
       skills: [
         { name: "RESTful APIs", icon: TbApi, color: "#FF6B35" },
-        { name: "GraphQL", icon: SiGraphql, color: "#E10098" },
+ 
         { name: "Postman", icon: SiPostman, color: "#FF6C37" },
       ],
     },
