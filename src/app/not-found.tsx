@@ -1,17 +1,17 @@
-"use client"
+'use client';
 
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowLeft, Home } from "lucide-react"
-import { useEffect, useState } from "react"
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft, Home } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function NotFound() {
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     // Trigger animation after component mounts
-    setIsVisible(true)
-  }, [])
+    setIsVisible(true);
+  }, []);
 
   return (
     <div className="relative flex flex-col items-center justify-center min-h-screen px-4 py-12 overflow-hidden bg-gradient-to-b from-background to-background/80">
@@ -24,7 +24,7 @@ export default function NotFound() {
 
       <div
         className={`relative flex flex-col items-center max-w-md text-center transition-all duration-700 ease-out transform ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
         {/* Error Code with gradient */}
@@ -36,7 +36,7 @@ export default function NotFound() {
         <div className="my-6 sm:my-8 relative">
           <div
             className={`w-48 h-48 sm:w-64 sm:h-64 rounded-full bg-gradient-to-br from-muted/40 to-muted/10 flex items-center justify-center transition-all duration-1000 ease-in-out ${
-              isVisible ? "scale-100" : "scale-50"
+              isVisible ? 'scale-100' : 'scale-50'
             }`}
           >
             <div className="absolute inset-0 rounded-full border border-primary/10 animate-pulse" />
@@ -44,7 +44,7 @@ export default function NotFound() {
 
             <svg
               className={`w-32 h-32 sm:w-40 sm:h-40 text-primary/60 transition-all duration-1000 delay-300 ${
-                isVisible ? "opacity-100 rotate-0" : "opacity-0 rotate-90"
+                isVisible ? 'opacity-100 rotate-0' : 'opacity-0 rotate-90'
               }`}
               viewBox="0 0 24 24"
               fill="none"
@@ -62,24 +62,24 @@ export default function NotFound() {
         {/* Error Message */}
         <h2
           className={`text-2xl sm:text-3xl font-bold tracking-tight mb-2 transition-all duration-700 delay-200 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
           }`}
         >
           Page Not Found
         </h2>
         <p
           className={`text-muted-foreground mb-8 max-w-xs sm:max-w-sm transition-all duration-700 delay-300 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
           }`}
         >
-          Sorry, we couldn&apos;t find the page you&apos;re looking for. It might have been moved, deleted, or never
-          existed.
+          Sorry, we couldn&apos;t find the page you&apos;re looking for. It might have been moved,
+          deleted, or never existed.
         </p>
 
         {/* Action Buttons - Improved for mobile */}
         <div
           className={`flex flex-col sm:flex-row gap-4 w-full transition-all duration-700 delay-400 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'
           }`}
         >
           <Button
@@ -125,6 +125,5 @@ export default function NotFound() {
         ))}
       </div>
     </div>
-  )
+  );
 }
-

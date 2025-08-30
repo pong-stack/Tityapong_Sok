@@ -1,38 +1,38 @@
-"use client"
+'use client';
 
-import Link from "next/link"
-import { SiGithub, SiTelegram, SiLinkedin } from "react-icons/si"
-import { Sun, Moon } from "lucide-react"
-import { motion } from "framer-motion"
-import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
+import Link from 'next/link';
+import { SiGithub, SiTelegram, SiLinkedin } from 'react-icons/si';
+import { Sun, Moon } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
 
 export default function Navbar() {
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   // Avoid hydration mismatch
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   const socials = [
     {
-      Link: "https://www.linkedin.com/in/sok-tityapong-2194802b6/",
-      label: "Linkedin",
+      Link: 'https://www.linkedin.com/in/sok-tityapong-2194802b6/',
+      label: 'Linkedin',
       icon: SiLinkedin,
     },
     {
-      Link: "https://github.com/Tityapong",
-      label: "Github",
+      Link: 'https://github.com/Tityapong',
+      label: 'Github',
       icon: SiGithub,
     },
     {
-      Link: "https://t.me/Tityapong",
-      label: "Telegram",
+      Link: 'https://t.me/Tityapong',
+      label: 'Telegram',
       icon: SiTelegram,
     },
-  ]
+  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -42,7 +42,7 @@ export default function Navbar() {
         staggerChildren: 0.1,
       },
     },
-  }
+  };
 
   const itemVariants = {
     hidden: { y: -20, opacity: 0 },
@@ -50,19 +50,19 @@ export default function Navbar() {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: 'spring',
         stiffness: 300,
         damping: 24,
       },
     },
-  }
+  };
 
   const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark")
-  }
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
 
   if (!mounted) {
-    return null
+    return null;
   }
 
   return (
@@ -83,13 +83,23 @@ export default function Navbar() {
         </motion.h1>
 
         {/* Social Links and Theme Toggle */}
-        <motion.div className="flex items-center  space-x-1" variants={containerVariants} initial="hidden" animate="visible">
+        <motion.div
+          className="flex items-center  space-x-1"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {/* Social Icons */}
           {socials.map((social, index) => {
-            const Icon = social.icon
+            const Icon = social.icon;
             return (
               <motion.div key={index} variants={itemVariants}>
-                <Link href={social.Link} aria-label={social.label} target="_blank" rel="noopener noreferrer">
+                <Link
+                  href={social.Link}
+                  aria-label={social.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <motion.div
                     whileHover={{ scale: 1.2 }}
                     whileTap={{ scale: 0.9 }}
@@ -99,7 +109,7 @@ export default function Navbar() {
                   </motion.div>
                 </Link>
               </motion.div>
-            )
+            );
           })}
 
           {/* Theme Toggle Button */}
@@ -111,7 +121,7 @@ export default function Navbar() {
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300 shadow-sm"
               aria-label="Toggle theme"
             >
-              {theme === "dark" ? (
+              {theme === 'dark' ? (
                 <Sun className="w-5 h-5 text-yellow-500" />
               ) : (
                 <Moon className="w-5 h-5 text-gray-700 dark:text-gray-300" />
@@ -121,5 +131,5 @@ export default function Navbar() {
         </motion.div>
       </motion.nav>
     </div>
-  )
+  );
 }

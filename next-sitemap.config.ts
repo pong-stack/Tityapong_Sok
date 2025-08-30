@@ -1,19 +1,19 @@
-import type { IConfig } from "next-sitemap";
+import type { IConfig } from 'next-sitemap';
 
 const config: IConfig = {
-  siteUrl: "https://tityapong-dev.vercel.app",
+  siteUrl: 'https://tityapong-dev.vercel.app',
   generateRobotsTxt: true, // Generate robots.txt alongside sitemap
-  outDir: "./public", // Output sitemap to /public folder
-  exclude: ["/server-sitemap.xml", "/private/*"], // Exclude dynamic or private routes
+  outDir: './public', // Output sitemap to /public folder
+  exclude: ['/server-sitemap.xml', '/private/*'], // Exclude dynamic or private routes
   robotsTxtOptions: {
     policies: [
       {
-        userAgent: "*",
-        allow: "/", // Allow crawling of all pages
+        userAgent: '*',
+        allow: '/', // Allow crawling of all pages
       },
     ],
     additionalSitemaps: [
-      "https://tityapong-dev.vercel.app/sitemap.xml", // Main sitemap
+      'https://tityapong-dev.vercel.app/sitemap.xml', // Main sitemap
       // Add more sitemaps if needed (e.g., for dynamic routes)
     ],
   },

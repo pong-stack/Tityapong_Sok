@@ -1,8 +1,8 @@
-"use client"
+'use client';
 
-import type React from "react"
-import Image from "next/image"
-import { useState } from "react"
+import type React from 'react';
+import Image from 'next/image';
+import { useState } from 'react';
 import {
   SiGithub,
   SiNextdotjs,
@@ -21,264 +21,275 @@ import {
   SiHtml5,
   SiCss3,
   SiBootstrap,
-} from "react-icons/si"
-import { FaGlobe, FaChevronLeft, FaChevronRight, FaBolt } from "react-icons/fa"
-import Title from "./Tittle"
+} from 'react-icons/si';
+import { FaGlobe, FaChevronLeft, FaChevronRight, FaBolt } from 'react-icons/fa';
+import Title from './Tittle';
 
 const projects = [
   {
-    id: "ticket-provider-api",
-    title: "Ticket Provider API",
-    period: "Feb 2025 - May 2025",
+    id: 'ticket-provider-api',
+    title: 'Ticket Provider API',
+    period: 'Feb 2025 - May 2025',
     description:
-      "Comprehensive ticket management system with API endpoints for event ticketing. Features include ticket creation, booking management, user authentication, and real-time availability tracking.",
-    images: ["/ticker-api.png", "/t1.png", "/t2.png", "/t3.png"],
-    technologies: ["Next.js", "shadcn/ui", "Tailwind CSS", "PHP", "Laravel"],
+      'Comprehensive ticket management system with API endpoints for event ticketing. Features include ticket creation, booking management, user authentication, and real-time availability tracking.',
+    images: ['/ticker-api.png', '/t1.png', '/t2.png', '/t3.png'],
+    technologies: ['Next.js', 'shadcn/ui', 'Tailwind CSS', 'PHP', 'Laravel'],
     features: [
-      "User authentication and authorization",
-      "Event creation and management",
-      "Ticket booking system",
-      "Order management",
-      "Admin dashboard",
-      "QR code generation",
+      'User authentication and authorization',
+      'Event creation and management',
+      'Ticket booking system',
+      'Order management',
+      'Admin dashboard',
+      'QR code generation',
     ],
     links: [
       {
-        label: "Source",
+        label: 'Source',
         icon: <SiGithub className="w-4 h-4" />,
-        url: "https://github.com/Tityapong/Ticket-Provider.git",
+        url: 'https://github.com/Tityapong/Ticket-Provider.git',
       },
     ],
   },
   {
-    id: "we-soccer",
-    title: "We Soccer",
-    period: "Jan 2025 - Mar 2025",
+    id: 'we-soccer',
+    title: 'We Soccer',
+    period: 'Jan 2025 - Mar 2025',
     description:
-      "Platform for booking football fields and finding teams. Users can apply to find teams. Admins manage beverage orders, accept/reject bookings with email/Telegram notifications.",
+      'Platform for booking football fields and finding teams. Users can apply to find teams. Admins manage beverage orders, accept/reject bookings with email/Telegram notifications.',
     images: [
-      "/we-soccer.png",
-      "/we1.png",
-      "/we2.png",
-      "/we3.png",
-      "/we4.png",
-      "/we5.png",
-      "/we6.png",
-      "/we7.png",
-      "/we8.png",
+      '/we-soccer.png',
+      '/we1.png',
+      '/we2.png',
+      '/we3.png',
+      '/we4.png',
+      '/we5.png',
+      '/we6.png',
+      '/we7.png',
+      '/we8.png',
     ],
-    technologies: ["Node.js", "Express", "MySQL", "EJS", "JWT", "Socket.io", "nodemailer", "Telegram Bot API"],
+    technologies: [
+      'Node.js',
+      'Express',
+      'MySQL',
+      'EJS',
+      'JWT',
+      'Socket.io',
+      'nodemailer',
+      'Telegram Bot API',
+    ],
     features: [
-      "Football field booking system",
-      "Team finding and application",
-      "real-time chat",
-      "Beverage order management",
-      "Email notifications",
-      "Telegram bot integration",
-      "Admin approval system",
-      "User profile management",
-      "Booking calendar",
+      'Football field booking system',
+      'Team finding and application',
+      'real-time chat',
+      'Beverage order management',
+      'Email notifications',
+      'Telegram bot integration',
+      'Admin approval system',
+      'User profile management',
+      'Booking calendar',
     ],
     links: [
       {
-        label: "Video Demo",
+        label: 'Video Demo',
         icon: <FaGlobe className="w-4 h-4" />,
-        url: "https://youtu.be/qiVKt4XoSdE?si=kXYicxF1z-yYVX5Q",
+        url: 'https://youtu.be/qiVKt4XoSdE?si=kXYicxF1z-yYVX5Q',
       },
       {
-        label: "Source",
+        label: 'Source',
         icon: <SiGithub className="w-4 h-4" />,
-        url: "https://github.com/Tityapong/we_soccer.git",
+        url: 'https://github.com/Tityapong/we_soccer.git',
       },
     ],
   },
   {
-    id: "book-my-event",
-    title: "BookMyEvent",
-    period: "Oct 2024 - Jan 2025",
+    id: 'book-my-event',
+    title: 'BookMyEvent',
+    period: 'Oct 2024 - Jan 2025',
     description:
-      "Event booking platform allowing user ratings and service listing by category. Admins manage categories (CRUD). Suppliers manage their bookings and event listings.",
+      'Event booking platform allowing user ratings and service listing by category. Admins manage categories (CRUD). Suppliers manage their bookings and event listings.',
     images: [
-      "/bookevent.png",
-      "/b1.png",
-      "/b2.png",
-      "/b3.png",
-      "/b4.png",
-      "/b5.png",
-      "/b6.png",
-      "/b7.png",
-      "/b8.png",
-      "/b9.png",
+      '/bookevent.png',
+      '/b1.png',
+      '/b2.png',
+      '/b3.png',
+      '/b4.png',
+      '/b5.png',
+      '/b6.png',
+      '/b7.png',
+      '/b8.png',
+      '/b9.png',
     ],
-    technologies: ["Node.js", "Express", "MySQL", "Next.js", "TypeScript", "Tailwind CSS", "JWT"],
+    technologies: ['Node.js', 'Express', 'MySQL', 'Next.js', 'TypeScript', 'Tailwind CSS', 'JWT'],
     features: [
-      "Event service listings",
-      "Category management (CRUD)",
-      "User rating system",
-      "Supplier dashboard",
-      "Booking management",
-      "Search and filtering",
-      "Review system",
-      "Admin panel",
-      "Service provider profiles",
+      'Event service listings',
+      'Category management (CRUD)',
+      'User rating system',
+      'Supplier dashboard',
+      'Booking management',
+      'Search and filtering',
+      'Review system',
+      'Admin panel',
+      'Service provider profiles',
     ],
     links: [
       {
-        label: "Website",
+        label: 'Website',
         icon: <FaGlobe className="w-4 h-4" />,
-        url: "https://book-my-event-pink.vercel.app/",
+        url: 'https://book-my-event-pink.vercel.app/',
       },
       {
-        label: "Source",
+        label: 'Source',
         icon: <SiGithub className="w-4 h-4" />,
-        url: "https://github.com/Tityapong/BookMyEvent.git",
+        url: 'https://github.com/Tityapong/BookMyEvent.git',
       },
     ],
   },
   {
-    id: "booking-hotel",
-    title: "Booking Hotel",
-    period: "March 2024 - April 2024",
+    id: 'booking-hotel',
+    title: 'Booking Hotel',
+    period: 'March 2024 - April 2024',
     description:
-      "A static hotel booking website prototype. An early team project focusing on front-end implementation.",
-    images: ["/booking_hotel.png"],
-    technologies: ["HTML", "CSS", "Bootstrap", "JavaScript"],
+      'A static hotel booking website prototype. An early team project focusing on front-end implementation.',
+    images: ['/booking_hotel.png'],
+    technologies: ['HTML', 'CSS', 'Bootstrap', 'JavaScript'],
     features: [
-      "Hotel room listings",
-      "Booking interface",
-      "Room details view",
-      "Responsive design",
-      "Image gallery",
-      "Contact forms",
+      'Hotel room listings',
+      'Booking interface',
+      'Room details view',
+      'Responsive design',
+      'Image gallery',
+      'Contact forms',
     ],
     links: [
       {
-        label: "Website",
+        label: 'Website',
         icon: <FaGlobe className="w-4 h-4" />,
-        url: "http://antstudents.com/WebScholarshipS2/Group-7/ProjectCSS_Booking%26Tour/index.html",
+        url: 'http://antstudents.com/WebScholarshipS2/Group-7/ProjectCSS_Booking%26Tour/index.html',
       },
       {
-        label: "Source",
+        label: 'Source',
         icon: <SiGithub className="w-4 h-4" />,
-        url: "/",
+        url: '/',
       },
     ],
   },
   {
-    id: "ecommerce",
-    title: "E-commerce",
-    period: "June 2023 - Sep 2023",
+    id: 'ecommerce',
+    title: 'E-commerce',
+    period: 'June 2023 - Sep 2023',
     description:
-      "E-commerce platform featuring product listing, product creation capabilities, and user authentication.",
-    images: ["/Ecommerce.png", "/e1.png", "/e2.png", "/e3.png", "/e4.png", "/e5.png", "/e6.png"],
-    technologies: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB", "JWT"],
+      'E-commerce platform featuring product listing, product creation capabilities, and user authentication.',
+    images: ['/Ecommerce.png', '/e1.png', '/e2.png', '/e3.png', '/e4.png', '/e5.png', '/e6.png'],
+    technologies: ['React', 'Tailwind CSS', 'Node.js', 'Express', 'MongoDB', 'JWT'],
     features: [
-      "Product catalog",
-      "Shopping cart",
-      "User authentication",
-      "Product creation",
-      "Order management",
-      "Admin dashboard",
-      "Search functionality",
-      "Responsive design",
+      'Product catalog',
+      'Shopping cart',
+      'User authentication',
+      'Product creation',
+      'Order management',
+      'Admin dashboard',
+      'Search functionality',
+      'Responsive design',
     ],
     links: [
       {
-        label: "Website",
+        label: 'Website',
         icon: <FaGlobe className="w-4 h-4" />,
-        url: "https://ecommerce-frontend-lemon-sigma.vercel.app/",
+        url: 'https://ecommerce-frontend-lemon-sigma.vercel.app/',
       },
       {
-        label: "Source",
+        label: 'Source',
         icon: <SiGithub className="w-4 h-4" />,
-        url: "https://github.com/Tityapong/Ecommerce-App.git",
+        url: 'https://github.com/Tityapong/Ecommerce-App.git',
       },
     ],
   },
-]
+];
 
 // Technology configuration with icons and brand colors
 const getTechConfig = (tech: string) => {
-  const techConfig: { [key: string]: { icon: React.ReactNode; bgColor: string; textColor: string } } = {
-    "Next.js": {
+  const techConfig: {
+    [key: string]: { icon: React.ReactNode; bgColor: string; textColor: string };
+  } = {
+    'Next.js': {
       icon: <SiNextdotjs className="w-3 h-3" />,
-      bgColor: "bg-black dark:bg-white",
-      textColor: "text-white dark:text-black",
+      bgColor: 'bg-black dark:bg-white',
+      textColor: 'text-white dark:text-black',
     },
-    "Tailwind CSS": {
+    'Tailwind CSS': {
       icon: <SiTailwindcss className="w-3 h-3" />,
-      bgColor: "bg-[#06B6D4]",
-      textColor: "text-white",
+      bgColor: 'bg-[#06B6D4]',
+      textColor: 'text-white',
     },
     PHP: {
       icon: <SiPhp className="w-3 h-3" />,
-      bgColor: "bg-[#777BB4]",
-      textColor: "text-white",
+      bgColor: 'bg-[#777BB4]',
+      textColor: 'text-white',
     },
     Laravel: {
       icon: <SiLaravel className="w-3 h-3" />,
-      bgColor: "bg-[#FF2D20]",
-      textColor: "text-white",
+      bgColor: 'bg-[#FF2D20]',
+      textColor: 'text-white',
     },
-    "Node.js": {
+    'Node.js': {
       icon: <SiNodedotjs className="w-3 h-3" />,
-      bgColor: "bg-[#339933]",
-      textColor: "text-white",
+      bgColor: 'bg-[#339933]',
+      textColor: 'text-white',
     },
     Express: {
       icon: <SiExpress className="w-3 h-3" />,
-      bgColor: "bg-[#000000] dark:bg-[#ffffff]",
-      textColor: "text-white dark:text-black",
+      bgColor: 'bg-[#000000] dark:bg-[#ffffff]',
+      textColor: 'text-white dark:text-black',
     },
     MySQL: {
       icon: <SiMysql className="w-3 h-3" />,
-      bgColor: "bg-[#4479A1]",
-      textColor: "text-white",
+      bgColor: 'bg-[#4479A1]',
+      textColor: 'text-white',
     },
     JavaScript: {
       icon: <SiJavascript className="w-3 h-3" />,
-      bgColor: "bg-[#F7DF1E]",
-      textColor: "text-black",
+      bgColor: 'bg-[#F7DF1E]',
+      textColor: 'text-black',
     },
     JWT: {
       icon: <SiJsonwebtokens className="w-3 h-3" />,
-      bgColor: "bg-[#000000] dark:bg-[#ffffff]",
-      textColor: "text-white dark:text-black",
+      bgColor: 'bg-[#000000] dark:bg-[#ffffff]',
+      textColor: 'text-white dark:text-black',
     },
-    "Socket.io": {
+    'Socket.io': {
       icon: <SiSocketdotio className="w-3 h-3" />,
-      bgColor: "bg-[#010101] dark:bg-[#ffffff]",
-      textColor: "text-white dark:text-black",
+      bgColor: 'bg-[#010101] dark:bg-[#ffffff]',
+      textColor: 'text-white dark:text-black',
     },
     TypeScript: {
       icon: <SiTypescript className="w-3 h-3" />,
-      bgColor: "bg-[#3178C6]",
-      textColor: "text-white",
+      bgColor: 'bg-[#3178C6]',
+      textColor: 'text-white',
     },
     React: {
       icon: <SiReact className="w-3 h-3" />,
-      bgColor: "bg-[#61DAFB]",
-      textColor: "text-black",
+      bgColor: 'bg-[#61DAFB]',
+      textColor: 'text-black',
     },
     MongoDB: {
       icon: <SiMongodb className="w-3 h-3" />,
-      bgColor: "bg-[#47A248]",
-      textColor: "text-white",
+      bgColor: 'bg-[#47A248]',
+      textColor: 'text-white',
     },
     HTML: {
       icon: <SiHtml5 className="w-3 h-3" />,
-      bgColor: "bg-[#E34F26]",
-      textColor: "text-white",
+      bgColor: 'bg-[#E34F26]',
+      textColor: 'text-white',
     },
     CSS: {
       icon: <SiCss3 className="w-3 h-3" />,
-      bgColor: "bg-[#1572B6]",
-      textColor: "text-white",
+      bgColor: 'bg-[#1572B6]',
+      textColor: 'text-white',
     },
     Bootstrap: {
       icon: <SiBootstrap className="w-3 h-3" />,
-      bgColor: "bg-[#7952B3]",
-      textColor: "text-white",
+      bgColor: 'bg-[#7952B3]',
+      textColor: 'text-white',
     },
     EJS: {
       icon: (
@@ -286,8 +297,8 @@ const getTechConfig = (tech: string) => {
           E
         </div>
       ),
-      bgColor: "bg-[#90A93A]",
-      textColor: "text-white",
+      bgColor: 'bg-[#90A93A]',
+      textColor: 'text-white',
     },
     nodemailer: {
       icon: (
@@ -295,28 +306,28 @@ const getTechConfig = (tech: string) => {
           @
         </div>
       ),
-      bgColor: "bg-[#0F9D58]",
-      textColor: "text-white",
+      bgColor: 'bg-[#0F9D58]',
+      textColor: 'text-white',
     },
-    "Telegram Bot API": {
+    'Telegram Bot API': {
       icon: (
         <div className="w-3 h-3 bg-[#0088CC] rounded-sm flex items-center justify-center text-[8px] font-bold text-white">
           T
         </div>
       ),
-      bgColor: "bg-[#0088CC]",
-      textColor: "text-white",
+      bgColor: 'bg-[#0088CC]',
+      textColor: 'text-white',
     },
-    "shadcn/ui": {
+    'shadcn/ui': {
       icon: (
         <div className="w-3 h-3 bg-[#000000] dark:bg-[#ffffff] rounded-sm flex items-center justify-center text-[8px] font-bold text-white dark:text-black">
           S
         </div>
       ),
-      bgColor: "bg-[#000000] dark:bg-[#ffffff]",
-      textColor: "text-white dark:text-black",
+      bgColor: 'bg-[#000000] dark:bg-[#ffffff]',
+      textColor: 'text-white dark:text-black',
     },
-  }
+  };
 
   return (
     techConfig[tech] || {
@@ -325,11 +336,11 @@ const getTechConfig = (tech: string) => {
           {tech.charAt(0)}
         </div>
       ),
-      bgColor: "bg-gray-500",
-      textColor: "text-white",
+      bgColor: 'bg-gray-500',
+      textColor: 'text-white',
     }
-  )
-}
+  );
+};
 
 export default function PortfolioShowcase() {
   return (
@@ -342,7 +353,7 @@ export default function PortfolioShowcase() {
         </div>
 
         <div className="pt-12 space-y-6">
-          {projects.map((project) => (
+          {projects.map(project => (
             <ProjectListItem
               key={project.id}
               title={project.title}
@@ -357,37 +368,45 @@ export default function PortfolioShowcase() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 interface ProjectProps {
-  title: string
-  period: string
-  description: string
-  images: string[]
-  technologies: string[]
-  features: string[]
+  title: string;
+  period: string;
+  description: string;
+  images: string[];
+  technologies: string[];
+  features: string[];
   links: {
-    label: string
-    icon: React.ReactNode
-    url: string
-  }[]
+    label: string;
+    icon: React.ReactNode;
+    url: string;
+  }[];
 }
 
-function ProjectListItem({ title, period, description, images, technologies, features, links }: ProjectProps) {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+function ProjectListItem({
+  title,
+  period,
+  description,
+  images,
+  technologies,
+  features,
+  links,
+}: ProjectProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % images.length)
-  }
+    setCurrentImageIndex(prev => (prev + 1) % images.length);
+  };
 
   const prevImage = () => {
-    setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length)
-  }
+    setCurrentImageIndex(prev => (prev - 1 + images.length) % images.length);
+  };
 
   const goToImage = (index: number) => {
-    setCurrentImageIndex(index)
-  }
+    setCurrentImageIndex(index);
+  };
 
   return (
     <div className="bg-card border border-border rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md dark:hover:shadow-[0_0_15px_rgba(120,120,255,0.15)]">
@@ -397,11 +416,11 @@ function ProjectListItem({ title, period, description, images, technologies, fea
           {images.map((imageSrc, index) => (
             <Image
               key={imageSrc}
-              src={imageSrc || "/placeholder.svg"}
+              src={imageSrc || '/placeholder.svg'}
               alt={`${title} screenshot ${index + 1}`}
               fill
               className={`object-contain transition-opacity duration-300 ${
-                index === currentImageIndex ? "opacity-100 relative" : "opacity-0 absolute inset-0"
+                index === currentImageIndex ? 'opacity-100 relative' : 'opacity-0 absolute inset-0'
               }`}
             />
           ))}
@@ -429,7 +448,9 @@ function ProjectListItem({ title, period, description, images, technologies, fea
                     key={index}
                     onClick={() => goToImage(index)}
                     className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
-                      index === currentImageIndex ? "bg-white scale-125 shadow-lg" : "bg-white/60 hover:bg-white/80"
+                      index === currentImageIndex
+                        ? 'bg-white scale-125 shadow-lg'
+                        : 'bg-white/60 hover:bg-white/80'
                     }`}
                     aria-label={`Go to image ${index + 1}`}
                   />
@@ -472,7 +493,7 @@ function ProjectListItem({ title, period, description, images, technologies, fea
               <h3 className="font-semibold mb-2 text-sm">Technologies:</h3>
               <div className="flex flex-wrap gap-1.5">
                 {technologies.map((tech, index) => {
-                  const config = getTechConfig(tech)
+                  const config = getTechConfig(tech);
                   return (
                     <span
                       key={index}
@@ -481,7 +502,7 @@ function ProjectListItem({ title, period, description, images, technologies, fea
                       {config.icon}
                       {tech}
                     </span>
-                  )
+                  );
                 })}
               </div>
             </div>
@@ -505,5 +526,5 @@ function ProjectListItem({ title, period, description, images, technologies, fea
         </div>
       </div>
     </div>
-  )
+  );
 }
