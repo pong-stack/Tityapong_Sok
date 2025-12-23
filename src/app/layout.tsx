@@ -1,5 +1,6 @@
 import type React from 'react';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -73,31 +74,29 @@ interface RootLayoutProps {
 }
 
 export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Sok Tityapong',
+    jobTitle: 'Web Developer',
+    url: 'https://tityapong-dev.vercel.app',
+    sameAs: [
+      'https://linkedin.com/in/sok-tityapong',
+      'https://github.com/sok-tityapong',
+      'https://twitter.com/SokTityapong',
+    ],
+    description:
+      'Sok Tityapong is a web developer specializing in TypeScript, Next.js, and React, building responsive and user-friendly applications.',
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta charSet="UTF-8" />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Person',
-              name: 'Sok Tityapong',
-              jobTitle: 'Web Developer',
-              url: 'https://tityapong-dev.vercel.app',
-              sameAs: [
-                'https://linkedin.com/in/sok-tityapong',
-                'https://github.com/sok-tityapong',
-                'https://twitter.com/SokTityapong',
-              ],
-              description:
-                'Sok Tityapong is a web developer specializing in TypeScript, Next.js, and React, building responsive and user-friendly applications.',
-            }),
-          }}
-        />
+        <Script id="person-ldjson" type="application/ld+json" strategy="beforeInteractive">
+          {JSON.stringify(jsonLd)}
+        </Script>
       </head>
       <body className={spaceGrotesk.className}>
         <ThemeProvider
