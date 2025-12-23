@@ -9,6 +9,7 @@ export default function Hero() {
       {/* Background Elements */}
       <div className="absolute top-32 right-8 sm:top-40 sm:right-32 w-1 h-1 bg-blue-500/30 dark:bg-blue-600/40 rounded-full hidden sm:block" />
       <div className="absolute bottom-24 left-8 sm:bottom-32 sm:left-40 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-blue-500/20 dark:bg-blue-600/30 rounded-full hidden sm:block" />
+      
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center min-h-[80vh]">
