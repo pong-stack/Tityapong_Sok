@@ -16,7 +16,7 @@ export default function page() {
         <GalleryComponent />
       </div>
       <div className="w-full mx-auto mt-20">
-        <Resume / />
+        <Resume />
 
         <Skill />
         <Projects />
